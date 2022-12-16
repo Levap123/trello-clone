@@ -1,0 +1,20 @@
+INFO:  2022/12/16 22:43:46 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:43:46 main.go:29: listen tcp: address ::8080: too many colons in address
+INFO:  2022/12/16 22:44:19 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:45:23 auth.go:24: Create user: ERROR: relation "users" does not exist (SQLSTATE 42P01)
+ERROR: 2022/12/16 22:46:26 main.go:18: Init db: Create tables: ERROR: syntax error at or near "AUTOINCREMENT" (SQLSTATE 42601)
+ERROR: 2022/12/16 22:47:11 main.go:18: Init db: Create tables: ERROR: syntax error at or near "SERIAL" (SQLSTATE 42601)
+INFO:  2022/12/16 22:47:46 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/16 22:48:18 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:49:41 main.go:18: Init db: Create tables: ERROR: syntax error at or near ")" (SQLSTATE 42601)
+INFO:  2022/12/16 22:49:51 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:51:26 main.go:18: Init db: Create tables: ERROR: syntax error at or near ")" (SQLSTATE 42601)
+INFO:  2022/12/16 22:51:36 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:51:40 auth.go:24: Create user: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+INFO:  2022/12/16 22:55:18 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:55:21 auth.go:29: Create user: user with this name or username is already exists
+ERROR: 2022/12/16 22:55:22 auth.go:29: Create user: user with this name or username is already exists
+ERROR: 2022/12/16 22:55:23 auth.go:29: Create user: user with this name or username is already exists
+INFO:  2022/12/16 22:55:30 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/16 22:55:59 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:56:02 auth.go:26: user with this name or username is already exists
