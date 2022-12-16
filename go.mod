@@ -1,3 +1,5 @@
 module github.com/Levap123/trello-clone
 
 go 1.19
+
+require github.com/gorilla/mux v1.8.0 // indirect
