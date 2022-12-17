@@ -1,6 +1,7 @@
 package rest
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/Levap123/trello-clone/internal/service"
@@ -22,7 +23,11 @@ func NewHandler(service *service.Service, logger *logger.Logger) *Handler {
 
 func (h *Handler) InitRoutes() http.Handler {
 	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/auth/sign-in", h.signIn).Methods("POST")
-	router.HandleFunc("/auth/sign-up", h.signUp).Methods("POST")
+	{
+		router.HandleFunc("/auth/sign-in", h.signIn).Methods("POST")
+		router.HandleFunc("/auth/sign-up", h.signUp).Methods("POST")
+	}
+	api := router.PathPrefix("/api").Subrouter()
+	api.Use(h.userIdentity)
 	return router
 }
