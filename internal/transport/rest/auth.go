@@ -8,7 +8,15 @@ import (
 	"github.com/Levap123/trello-clone/pkg/webjson"
 )
 
+type signInBody struct {
+	Email    string `json:"email,omitempty"`
+	Password string `json:"password,omitempty"`
+}
+
 func (h *Handler) signIn(w http.ResponseWriter, r *http.Request) {
+	var body signInBody
+	webjson.ReadJSON(r, &body)
+	id,err=
 }
 
 type signUpBody struct {

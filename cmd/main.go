@@ -5,6 +5,7 @@ import (
 	"github.com/Levap123/trello-clone/internal/repository"
 	"github.com/Levap123/trello-clone/internal/service"
 	"github.com/Levap123/trello-clone/internal/transport/rest"
+	"github.com/Levap123/trello-clone/pkg/jwt"
 	"github.com/Levap123/trello-clone/pkg/logger"
 	"github.com/Levap123/trello-clone/pkg/server"
 )

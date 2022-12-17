@@ -1,6 +1,8 @@
 package service
 
-import "github.com/Levap123/trello-clone/internal/repository"
+import (
+	"github.com/Levap123/trello-clone/internal/repository"
+)
 
 type Service struct {
 	Auth
@@ -8,6 +10,7 @@ type Service struct {
 
 type Auth interface {
 	CreateUser(email, username, password string) (int, error)
+	GetUser(emil, password string) (string, error)
 }
 
 func NewService(repo *repository.Repository) *Service {
