@@ -1,6 +1,9 @@
 package repository
 
-import "github.com/jmoiron/sqlx"
+import (
+	"github.com/Levap123/trello-clone/internal/entity"
+	"github.com/jmoiron/sqlx"
+)
 
 type Repository struct {
 	Auth
@@ -8,6 +11,7 @@ type Repository struct {
 
 type Auth interface {
 	CreateUser(email, username, password string) (int, error)
+	GetUser(email string) (entity.User, error)
 }
 
 func NewRepo(db *sqlx.DB) *Repository {

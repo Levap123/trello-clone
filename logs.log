@@ -20,3 +20,11 @@ INFO:  2022/12/16 22:55:59 main.go:27: server is listening on: http://localhost:
 ERROR: 2022/12/16 22:56:02 auth.go:26: user with this name or username is already exists
 INFO:  2022/12/16 22:59:05 main.go:27: server is listening on: http://localhost:8080
 INFO:  2022/12/17 15:01:13 main.go:29: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:23:35 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/17 15:24:02 auth.go:42: user with this name or username is already exists
+INFO:  2022/12/17 15:25:50 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:29:44 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:32:18 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:33:06 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:36:04 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:41:14 main.go:27: server is listening on: http://localhost:8080

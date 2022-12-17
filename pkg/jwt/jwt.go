@@ -5,17 +5,28 @@ import (
 	"os"
 	"time"
 
-	"github.com/golang-jwt/jwt/v4"
+	"github.com/dgrijalva/jwt-go"
 )
 
-var sign = os.Getenv("SIGN")
+var sign = []byte(os.Getenv("SIGN"))
+
+type tokenClaims struct {
+	jwt.StandardClaims
+	UserId int `json:"user_id"`
+}
 
 func GenerateJwt(id int) (string, error) {
-	fmt.Println(sign)
-	claims := jwt.MapClaims{
-		"exp": time.Now().Add(72 * time.Hour),
-		"id":  id,
+
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, &tokenClaims{
+		jwt.StandardClaims{
+			ExpiresAt: time.Now().Add(72 * time.Hour).Unix(),
+		},
+		id,
+	})
+	tokenString, err := token.SignedString(sign)
+	if err != nil {
+		fmt.Println(123)
+		return "", err
 	}
-	token := jwt.NewWithClaims(jwt.SigningMethodHS512, claims)
-	return token.SignedString(sign)
+	return tokenString, nil
 }

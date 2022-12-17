@@ -16,7 +16,16 @@ type signInBody struct {
 func (h *Handler) signIn(w http.ResponseWriter, r *http.Request) {
 	var body signInBody
 	webjson.ReadJSON(r, &body)
-	id,err=
+	token, err := h.service.Auth.GetUser(body.Email, body.Password)
+	if err != nil {
+		status := http.StatusInternalServerError
+		if errors.Is(err, errs.ErrInvalidEmail) || errors.Is(err, errs.ErrPasswordIncorrect) {
+			status = http.StatusBadRequest
+		}
+		webjson.JSONError(w, err, status)
+		return
+	}
+	webjson.SendJSON(w, map[string]string{"token": token})
 }
 
 type signUpBody struct {
@@ -30,7 +39,7 @@ func (h *Handler) signUp(w http.ResponseWriter, r *http.Request) {
 	webjson.ReadJSON(r, &body)
 	id, err := h.service.Auth.CreateUser(body.Email, body.Name, body.Password)
 	if err != nil {
-		if errors.Is(err, errs.UniqueErr) {
+		if errors.Is(err, errs.ErrUnique) {
 			h.logger.Err.Printf("%v\n", err)
 			webjson.JSONError(w, err, http.StatusBadRequest)
 			return
