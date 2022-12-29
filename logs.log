@@ -107,3 +107,109 @@ INFO:  2022/12/29 22:31:30 main.go:27: server is listening on: http://localhost:
 ERROR: 2022/12/29 22:31:38 workspace.go:40: sql: no rows in result set
 INFO:  2022/12/29 22:31:53 main.go:27: server is listening on: http://localhost:8080
 ERROR: 2022/12/29 22:31:55 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 22:33:50 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:33:51 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 22:39:58 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:40:28 workspace.go:59: Delete workspace: ERROR: column "workspace_id" does not exist (SQLSTATE 42703)
+INFO:  2022/12/29 22:40:44 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:40:51 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:41:05 auth.go:43: user with this name or username is already exists
+ERROR: 2022/12/29 22:41:13 auth.go:43: user with this name or username is already exists
+ERROR: 2022/12/29 22:41:26 auth.go:43: user with this name or username is already exists
+ERROR: 2022/12/29 22:41:35 auth.go:43: user with this name or username is already exists
+INFO:  2022/12/29 22:41:48 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:41:49 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+INFO:  2022/12/29 22:43:16 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:43:19 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+INFO:  2022/12/29 22:44:51 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:45:00 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:45:03 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:45:03 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:45:04 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:45:04 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:45:35 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+INFO:  2022/12/29 22:46:20 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:46:23 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:28 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:30 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:31 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:31 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:32 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:33 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:33 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:34 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:34 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:47:00 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:47:01 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:47:04 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+INFO:  2022/12/29 22:47:36 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:48:28 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:48:30 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:48:39 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 22:48:42 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:49:10 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:49:56 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:51:03 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:51:37 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 22:51:39 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 22:51:42 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 22:52:42 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:53:20 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 22:54:04 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:54:11 workspace.go:59: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 22:54:26 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:55:24 workspace.go:59: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 22:59:18 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:59:30 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:59:43 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 23:00:33 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:01:09 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:01:18 workspace.go:59: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 23:05:43 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:07:12 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:07:13 workspace.go:59: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 23:15:40 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:15:51 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:15:51 workspace.go:59: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 23:16:02 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 23:16:26 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:16:37 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:16:39 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:16:51 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:16:54 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:16:55 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 23:17:56 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:18:03 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:18:05 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 23:18:48 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:18:51 workspace.go:59: ERROR: there is no parameter $1 (SQLSTATE 42P02)
+INFO:  2022/12/29 23:19:02 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:19:11 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:19:32 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:19:42 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:19:55 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:19:56 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:19:57 workspace.go:59: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 23:20:16 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:21:10 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:21:18 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 23:22:52 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:22:57 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:23:07 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 23:26:09 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:26:11 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:14 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:15 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:16 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:17 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:17 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:18 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:19 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:19 workspace.go:60: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 23:28:40 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:28:44 workspace.go:60: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 23:30:23 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:30:34 workspace.go:60: ERROR: syntax error at or near "*" (SQLSTATE 42601)
+INFO:  2022/12/29 23:41:28 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:41:36 workspace.go:60: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:41:38 workspace.go:60: Workspace with this id does not exist or user does not have this workspace

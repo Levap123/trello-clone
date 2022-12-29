@@ -19,4 +19,5 @@ func SendJSON(w http.ResponseWriter, input any) {
 
 func ReadJSON(r *http.Request, output any) {
 	json.NewDecoder(r.Body).Decode(output)
+	defer r.Body.Close()
 }

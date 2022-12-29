@@ -18,21 +18,7 @@ func NewWorkspaceRepo(db *sqlx.DB) *WorkspaceRepo {
 	}
 }
 
-func (wr *WorkspaceRepo) CreateRelation(userId, workspaceId int) error {
-	tx, err := withTx(wr.db)
-	if err != nil {
-		return errs.Fail(err, "Create relation")
-	}
-	defer tx.Rollback()
-	query := fmt.Sprintf("INSERT INTO %s (user_id, workspace_id) VALUES ($1,$2)", workspaceRelationTable)
-	if _, err := tx.Exec(query, userId, workspaceId); err != nil {
-		return errs.Fail(err, "Create relation")
-	}
-	return tx.Commit()
-}
-
 func (wr *WorkspaceRepo) Create(title, logo string, userId int) (int, error) {
-	fmt.Println(title, logo)
 	tx, err := withTx(wr.db)
 	if err != nil {
 		return 0, errs.Fail(err, "Create workspace")
@@ -43,9 +29,9 @@ func (wr *WorkspaceRepo) Create(title, logo string, userId int) (int, error) {
 	if err := tx.Get(&workspaceId, query, title, logo); err != nil {
 		return 0, errs.Fail(err, "Create workspace")
 	}
-	fmt.Println(workspaceId)
-	if err := wr.CreateRelation(userId, workspaceId); err != nil {
-		return 0, err
+	query = fmt.Sprintf("INSERT INTO %s (user_id, workspace_id) VALUES ($1,$2)", workspaceRelationTable)
+	if _, err := tx.Exec(query, userId, workspaceId); err != nil {
+		return 0, errs.Fail(err, "Create relation")
 	}
 	return workspaceId, tx.Commit()
 }
@@ -86,8 +72,12 @@ func (wr *WorkspaceRepo) DeleteById(userId, workspaceId int) (int, error) {
 	}
 	defer tx.Rollback()
 	var id int
-	query := fmt.Sprintf("DELETE FROM %s WHERE user_id = $1 and workspace_id = $2 RETURNING id", workspacesTable)
-	if err := tx.Get(&id, query, userId); err != nil {
+	query := fmt.Sprintf("DELETE FROM %s WHERE workspace_id = $1 AND user_id = $2 RETURNING workspace_id", workspaceRelationTable)
+	if err := tx.Get(&id, query, workspaceId, userId); err != nil {
+		return 0, errs.ErrInvalidWorkspace
+	}
+	query = fmt.Sprintf("DELETE FROM %s WHERE id = $1 RETURNING id", workspacesTable)
+	if _, err := tx.Exec(query, workspaceId); err != nil {
 		return 0, errs.Fail(err, "Delete workspace")
 	}
 	return id, tx.Commit()

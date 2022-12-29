@@ -17,7 +17,6 @@ type Auth interface {
 
 type Workspace interface {
 	Create(title, logo string, userId int) (int, error)
-	CreateRelation(userId, workspaceId int) error
 	GetAll(userId int) ([]entity.Workspace, error)
 	GetById(userId, workspaceId int) (entity.Workspace, error)
 	DeleteById(userId, workspaceId int) (int, error)

@@ -30,12 +30,12 @@ func (h *Handler) CreateWorkspace(w http.ResponseWriter, r *http.Request) {
 }
 
 func (h *Handler) GetWorkspacesById(w http.ResponseWriter, r *http.Request) {
-	userId, _ := r.Context().Value("id").(int)
-	worksSpaceId, err := strconv.Atoi(mux.Vars(r)["id"])
+	userId := r.Context().Value("id").(int)
+	workSpaceId, err := strconv.Atoi(mux.Vars(r)["id"])
 	if err != nil {
 		webjson.JSONError(w, fmt.Errorf("Invalid URL"), http.StatusNotFound)
 	}
-	worksSpace, err := h.service.Workspace.GetById(userId, worksSpaceId)
+	worksSpace, err := h.service.Workspace.GetById(userId, workSpaceId)
 	if err != nil {
 		h.logger.Err.Println(err.Error())
 		if errors.Is(err, errs.ErrInvalidWorkspace) {
@@ -46,4 +46,24 @@ func (h *Handler) GetWorkspacesById(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	webjson.SendJSON(w, worksSpace)
+}
+
+func (h *Handler) DeleteWorkspaceById(w http.ResponseWriter, r *http.Request) {
+	userId := r.Context().Value("id").(int)
+	fmt.Println(userId)
+	workSpaceId, err := strconv.Atoi(mux.Vars(r)["id"])
+	if err != nil {
+		webjson.JSONError(w, fmt.Errorf("Invalid URL"), http.StatusNotFound)
+	}
+	workSpaceId, err = h.service.Workspace.DeleteById(userId, workSpaceId)
+	if err != nil {
+		h.logger.Err.Println(err.Error())
+		if errors.Is(err, errs.ErrInvalidWorkspace) {
+			webjson.JSONError(w, err, http.StatusBadRequest)
+			return
+		}
+		webjson.JSONError(w, err, http.StatusInternalServerError)
+		return
+	}
+	webjson.SendJSON(w, map[string]int{"workspaceId": workSpaceId})
 }

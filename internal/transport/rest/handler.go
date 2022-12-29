@@ -32,7 +32,7 @@ func (h *Handler) InitRoutes() http.Handler {
 	{
 		workspace.HandleFunc("", h.CreateWorkspace).Methods("POST")
 		workspace.HandleFunc("/{id}", h.GetWorkspacesById).Methods("GET")
-		// workspace.HandleFunc("/{id}", h.).Methods("Delete")
+		workspace.HandleFunc("/{id}", h.DeleteWorkspaceById).Methods("DELETE")
 	}
 	return router
 }

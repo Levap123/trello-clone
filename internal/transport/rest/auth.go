@@ -45,7 +45,7 @@ func (h *Handler) signUp(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		h.logger.Err.Printf("%v\n", err)
-		webjson.JSONError(w, errs.WebFail(http.StatusInternalServerError), http.StatusInternalServerError)
+		webjson.JSONError(w, err, http.StatusInternalServerError)
 		return
 	}
 	webjson.SendJSON(w, map[string]int{"id": id})
