@@ -28,7 +28,7 @@ func (ar *AuthRepo) CreateUser(email, username, password string) (int, error) {
 	var id int
 	query := fmt.Sprintf("INSERT INTO %s (email, name, password) VALUES ($1, $2, $3) RETURNING id", usersTable)
 	if err := tx.Get(&id, query, email, username, password); err != nil {
-		return 0, errs.ErrUnique
+		return 0, errs.ErrUniqueUser
 	}
 	return id, tx.Commit()
 }

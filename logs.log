@@ -41,3 +41,69 @@ INFO:  2022/12/17 16:28:14 main.go:27: server is listening on: http://localhost:
 INFO:  2022/12/17 16:28:24 main.go:27: server is listening on: http://localhost:8080
 INFO:  2022/12/17 16:28:44 main.go:27: server is listening on: http://localhost:8080
 INFO:  2022/12/17 16:29:15 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 14:30:44 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:31:26 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:06 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:07 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:08 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:09 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:09 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:20 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:33 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:53 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:33:24 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+INFO:  2022/12/20 14:33:51 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 14:34:21 main.go:18: Init db: Create tables: ERROR: type "id" does not exist (SQLSTATE 42704)
+INFO:  2022/12/20 14:34:37 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/20 14:34:50 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/20 14:41:43 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 14:49:52 main.go:18: Init db: Create tables: ERROR: syntax error at or near ")" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:50:01 main.go:18: Init db: Create tables: ERROR: syntax error at or near ")" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:50:13 main.go:18: Init db: Create tables: ERROR: syntax error at or near "user" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:50:30 main.go:18: Init db: Create tables: ERROR: syntax error at or near "CREATE" (SQLSTATE 42601)
+INFO:  2022/12/20 14:50:38 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/20 15:25:35 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/20 15:28:10 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/20 15:29:52 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:29:54 workspace.go:20: Create workspace: ERROR: column "user_id" of relation "workspaces" does not exist (SQLSTATE 42703)
+INFO:  2022/12/20 15:51:46 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:51:49 workspace.go:26: Create workspace: ERROR: column "workspaceid" does not exist (SQLSTATE 42703)
+INFO:  2022/12/20 15:52:19 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:52:21 workspace.go:26: Create workspace: expected 2 arguments, got 3
+INFO:  2022/12/20 15:52:36 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:52:38 workspace.go:23: Workspace with this id does not exist
+ERROR: 2022/12/20 15:52:38 workspace.go:26: Workspace with this id does not exist
+INFO:  2022/12/20 15:53:30 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:53:32 workspace.go:20: Create relation: ERROR: insert or update on table "users_workspaces" violates foreign key constraint "users_workspaces_workspace_id_fkey" (SQLSTATE 23503)
+INFO:  2022/12/20 15:54:18 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:54:20 workspace.go:20: Create relation: ERROR: insert or update on table "users_workspaces" violates foreign key constraint "users_workspaces_workspace_id_fkey" (SQLSTATE 23503)
+INFO:  2022/12/20 15:55:58 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:56:00 workspace.go:20: Create relation: ERROR: insert or update on table "users_workspaces" violates foreign key constraint "users_workspaces_workspace_id_fkey" (SQLSTATE 23503)
+INFO:  2022/12/20 15:56:47 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 21:55:52 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 22:10:04 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 22:11:47 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:12:37 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 22:13:27 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 22:15:55 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 22:16:01 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 22:16:41 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:16:53 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 22:17:38 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:17:38 workspace.go:40: ERROR: column "user_id" does not exist (SQLSTATE 42703)
+ERROR: 2022/12/29 22:20:07 workspace.go:40: ERROR: column "user_id" does not exist (SQLSTATE 42703)
+INFO:  2022/12/29 22:20:49 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:20:50 workspace.go:40: expected 2 arguments, got 1
+INFO:  2022/12/29 22:28:33 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:28:36 workspace.go:40: expected 2 arguments, got 1
+ERROR: 2022/12/29 22:28:37 workspace.go:40: expected 2 arguments, got 1
+INFO:  2022/12/29 22:29:36 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:29:37 workspace.go:40: expected slice but got struct
+INFO:  2022/12/29 22:30:33 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 22:31:11 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:31:12 workspace.go:40: expected slice but got struct
+ERROR: 2022/12/29 22:31:13 workspace.go:40: expected slice but got struct
+INFO:  2022/12/29 22:31:30 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:31:38 workspace.go:40: sql: no rows in result set
+INFO:  2022/12/29 22:31:53 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:31:55 workspace.go:40: Workspace with this id does not exist or user does not have this workspace

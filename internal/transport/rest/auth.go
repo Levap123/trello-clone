@@ -39,7 +39,7 @@ func (h *Handler) signUp(w http.ResponseWriter, r *http.Request) {
 	webjson.ReadJSON(r, &body)
 	id, err := h.service.Auth.CreateUser(body.Email, body.Name, body.Password)
 	if err != nil {
-		if errors.Is(err, errs.ErrUnique) {
+		if errors.Is(err, errs.ErrUniqueUser) {
 			h.logger.Err.Printf("%v\n", err)
 			webjson.JSONError(w, err, http.StatusBadRequest)
 			return

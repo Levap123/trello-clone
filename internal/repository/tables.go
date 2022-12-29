@@ -4,14 +4,15 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/Levap123/trello-clone/pkg/errors"
+	errs "github.com/Levap123/trello-clone/pkg/errors"
 	"github.com/jmoiron/sqlx"
 )
 
 const (
-	tableSchemas = "up.sql"
-
-	usersTable   = "users"
+	tableSchemas           = "up.sql"
+	workspacesTable        = "workspaces"
+	usersTable             = "users"
+	workspaceRelationTable = "users_workspaces"
 )
 
 func createTables(db *sqlx.DB) error {

@@ -28,5 +28,11 @@ func (h *Handler) InitRoutes() http.Handler {
 	}
 	api := router.PathPrefix("/api").Subrouter()
 	api.Use(h.userIdentity)
+	workspace := api.PathPrefix("/workspaces").Subrouter()
+	{
+		workspace.HandleFunc("", h.CreateWorkspace).Methods("POST")
+		workspace.HandleFunc("/{id}", h.GetWorkspacesById).Methods("GET")
+		// workspace.HandleFunc("/{id}", h.).Methods("Delete")
+	}
 	return router
 }

@@ -7,6 +7,7 @@ import (
 
 type Repository struct {
 	Auth
+	Workspace
 }
 
 type Auth interface {
@@ -14,9 +15,18 @@ type Auth interface {
 	GetUser(email string) (entity.User, error)
 }
 
+type Workspace interface {
+	Create(title, logo string, userId int) (int, error)
+	CreateRelation(userId, workspaceId int) error
+	GetAll(userId int) ([]entity.Workspace, error)
+	GetById(userId, workspaceId int) (entity.Workspace, error)
+	DeleteById(userId, workspaceId int) (int, error)
+}
+
 func NewRepo(db *sqlx.DB) *Repository {
 	return &Repository{
-		Auth: NewAuthRepo(db),
+		Auth:      NewAuthRepo(db),
+		Workspace: NewWorkspaceRepo(db),
 	}
 }
 func withTx(db *sqlx.DB) (*sqlx.Tx, error) {
