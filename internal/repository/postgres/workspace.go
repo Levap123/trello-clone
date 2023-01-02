@@ -1,4 +1,4 @@
-package repository
+package postgres
 
 import (
 	"fmt"
@@ -82,3 +82,4 @@ func (wr *WorkspaceRepo) DeleteById(userId, workspaceId int) (int, error) {
 	}
 	return id, tx.Commit()
 }
+

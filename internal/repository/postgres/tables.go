@@ -1,4 +1,4 @@
-package repository
+package postgres
 
 import (
 	"io/ioutil"
@@ -13,6 +13,7 @@ const (
 	workspacesTable        = "workspaces"
 	usersTable             = "users"
 	workspaceRelationTable = "users_workspaces"
+	boardTable             = "boards"
 )
 
 func createTables(db *sqlx.DB) error {

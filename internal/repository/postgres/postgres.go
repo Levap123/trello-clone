@@ -1,4 +1,4 @@
-package repository
+package postgres
 
 import (
 	"fmt"
@@ -22,4 +22,8 @@ func InitDb(dbCfg *configs.DbConfigs) (*sqlx.DB, error) {
 		return nil, errs.Fail(err, "Init db")
 	}
 	return db, nil
+}
+
+func withTx(db *sqlx.DB) (*sqlx.Tx, error) {
+	return db.Beginx()
 }

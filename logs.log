@@ -213,3 +213,11 @@ ERROR: 2022/12/29 23:30:34 workspace.go:60: ERROR: syntax error at or near "*" (
 INFO:  2022/12/29 23:41:28 main.go:27: server is listening on: http://localhost:8080
 ERROR: 2022/12/29 23:41:36 workspace.go:60: Workspace with this id does not exist or user does not have this workspace
 ERROR: 2022/12/29 23:41:38 workspace.go:60: Workspace with this id does not exist or user does not have this workspace
+INFO:  2023/01/02 16:15:54 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/02 16:19:19 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/02 16:19:29 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/02 16:21:06 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/02 16:21:31 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/02 16:21:32 board.go:29: ERROR: syntax error at or near "AND" (SQLSTATE 42601)
+INFO:  2023/01/02 16:22:14 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/02 16:23:24 main.go:28: server is listening on: http://localhost:8080

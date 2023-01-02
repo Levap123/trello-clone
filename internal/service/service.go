@@ -8,6 +8,7 @@ import (
 type Service struct {
 	Auth
 	Workspace
+	Board
 }
 
 type Auth interface {
@@ -22,9 +23,17 @@ type Workspace interface {
 	DeleteById(userId, workspaceId int) (int, error)
 }
 
+type Board interface {
+	Create(title, background string, userId, workspaceId int) (int, error)
+	// GetByWorkspaceId(userId, worskpaceId, boardId int) (entity.Workspace, error)
+	// GetById(userId, boardId int) (entity.Workspace, error)
+	// DeleteById(userId, workspace, boardId int) (int, error)
+}
+
 func NewService(repo *repository.Repository) *Service {
 	return &Service{
 		Auth:      NewAuthService(repo.Auth),
 		Workspace: NewWorkspaceService(repo.Workspace),
+		Board:     NewBoardService(repo.Board),
 	}
 }

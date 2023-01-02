@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/Levap123/trello-clone/internal/entity"
 	errs "github.com/Levap123/trello-clone/pkg/errors"
 	"github.com/Levap123/trello-clone/pkg/webjson"
 	"github.com/gorilla/mux"
@@ -16,7 +17,7 @@ type WorksSpaceInput struct {
 	Logo  string `json:"logo,omitempty"`
 }
 
-func (h *Handler) CreateWorkspace(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) createWorkspace(w http.ResponseWriter, r *http.Request) {
 	var input WorksSpaceInput
 	webjson.ReadJSON(r, &input)
 	userId := r.Context().Value("id").(int)
@@ -29,7 +30,11 @@ func (h *Handler) CreateWorkspace(w http.ResponseWriter, r *http.Request) {
 	webjson.SendJSON(w, map[string]int{"workspaceId": id})
 }
 
-func (h *Handler) GetWorkspacesById(w http.ResponseWriter, r *http.Request) {
+type WorkspacesWithBoards struct {
+	Works entity.Workspace
+}
+
+func (h *Handler) getWorkspacesById(w http.ResponseWriter, r *http.Request) {
 	userId := r.Context().Value("id").(int)
 	workSpaceId, err := strconv.Atoi(mux.Vars(r)["id"])
 	if err != nil {
@@ -48,7 +53,7 @@ func (h *Handler) GetWorkspacesById(w http.ResponseWriter, r *http.Request) {
 	webjson.SendJSON(w, worksSpace)
 }
 
-func (h *Handler) DeleteWorkspaceById(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) deleteWorkspaceById(w http.ResponseWriter, r *http.Request) {
 	userId := r.Context().Value("id").(int)
 	fmt.Println(userId)
 	workSpaceId, err := strconv.Atoi(mux.Vars(r)["id"])

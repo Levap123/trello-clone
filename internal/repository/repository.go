@@ -2,12 +2,14 @@ package repository
 
 import (
 	"github.com/Levap123/trello-clone/internal/entity"
+	"github.com/Levap123/trello-clone/internal/repository/postgres"
 	"github.com/jmoiron/sqlx"
 )
 
 type Repository struct {
 	Auth
 	Workspace
+	Board
 }
 
 type Auth interface {
@@ -22,12 +24,17 @@ type Workspace interface {
 	DeleteById(userId, workspaceId int) (int, error)
 }
 
-func NewRepo(db *sqlx.DB) *Repository {
-	return &Repository{
-		Auth:      NewAuthRepo(db),
-		Workspace: NewWorkspaceRepo(db),
-	}
+type Board interface {
+	Create(title, background string, userId, workspaceId int) (int, error)
+	// GetByWorkspaceId(userId, worskpaceId, boardId int) (entity.Workspace, error)
+	// GetById(userId, boardId int) (entity.Workspace, error)
+	// DeleteById(userId, workspace, boardId int) (int, error)
 }
-func withTx(db *sqlx.DB) (*sqlx.Tx, error) {
-	return db.Beginx()
+
+func NewRepoPostgres(db *sqlx.DB) *Repository {
+	return &Repository{
+		Auth:      postgres.NewAuthRepo(db),
+		Workspace: postgres.NewWorkspaceRepo(db),
+		Board:     postgres.NewBoardRepo(db),
+	}
 }
