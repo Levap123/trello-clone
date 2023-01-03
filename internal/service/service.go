@@ -25,7 +25,7 @@ type Workspace interface {
 
 type Board interface {
 	Create(title, background string, userId, workspaceId int) (int, error)
-	// GetByWorkspaceId(userId, worskpaceId, boardId int) (entity.Workspace, error)
+	GetByWorkspaceId(userId, workspaceId int) ([]entity.Board, error)
 	GetById(userId, boardId, workspaceId int) (entity.Board, error)
 	// DeleteById(userId, workspace, boardId int) (int, error)
 }

@@ -73,3 +73,24 @@ func (br *BoardRepo) GetById(userId, boardId, workspaceId int) (entity.Board, er
 	}
 	return board, tx.Commit()
 }
+
+func (br *BoardRepo) GetByWorkspaceId(userId, workspaceId int) ([]entity.Board, error) {
+	tx, err := withTx(br.db)
+	if err != nil {
+		return nil, err
+	}
+	defer tx.Rollback()
+	ok, err := br.IsWorkspaceAssignToUser(userId, workspaceId)
+	if err != nil {
+		return nil, err
+	}
+	if !ok {
+		return nil, errs.ErrInvalidWorkspace
+	}
+	var boards []entity.Board
+	query := fmt.Sprintf("SELECT * FROM %s WHERE workspace_id = $1", boardTable)
+	if err := tx.Select(&boards, query, workspaceId); err != nil {
+		return nil, err
+	}
+	return boards, nil
+}

@@ -236,3 +236,5 @@ ERROR: 2023/01/03 12:11:49 board.go:54: missing destination name workspace_id in
 ERROR: 2023/01/03 12:11:50 board.go:54: missing destination name workspace_id in *entity.Board
 INFO:  2023/01/03 12:12:36 main.go:28: server is listening on: http://localhost:8080
 ERROR: 2023/01/03 12:12:55 board.go:54: workspace with this id does not exist or user does not have this workspace
+INFO:  2023/01/03 12:45:30 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/03 12:45:38 board.go:74: workspace with this id does not exist or user does not have this workspace

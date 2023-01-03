@@ -61,3 +61,23 @@ func (h *Handler) getBoardById(w http.ResponseWriter, r *http.Request) {
 	}
 	webjson.SendJSON(w, board)
 }
+
+func (h *Handler) getBoardByWorkspaceId(w http.ResponseWriter, r *http.Request) {
+	workspaceId, err := strconv.Atoi(mux.Vars(r)["workspaceId"])
+	if err != nil {
+		webjson.JSONError(w, errs.WebFail(http.StatusNotFound), http.StatusNotFound)
+		return
+	}
+	userId := r.Context().Value("id").(int)
+	boards, err := h.service.Board.GetByWorkspaceId(userId, workspaceId)
+	if err != nil {
+		h.logger.Err.Println(err)
+		if errors.Is(err, errs.ErrInvalidWorkspace) {
+			webjson.JSONError(w, err, http.StatusBadRequest)
+			return
+		}
+		webjson.JSONError(w, errs.WebFail(http.StatusInternalServerError), http.StatusInternalServerError)
+		return
+	}
+	webjson.SendJSON(w, boards)
+}

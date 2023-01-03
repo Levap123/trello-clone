@@ -36,6 +36,7 @@ func (h *Handler) InitRoutes() http.Handler {
 		boards := workspace.PathPrefix("/{workspaceId}/boards").Subrouter()
 		{
 			boards.HandleFunc("", h.createBoard).Methods("POST")
+			boards.HandleFunc("", h.getBoardByWorkspaceId).Methods("GET")
 			boards.HandleFunc("/{id}", h.getBoardById).Methods("GET")
 		}
 	}

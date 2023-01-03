@@ -22,3 +22,7 @@ func (bs *BoardService) Create(title, background string, userId, workspaceId int
 func (bs *BoardService) GetById(userId, boardId, workspaceId int) (entity.Board, error) {
 	return bs.repo.GetById(userId, boardId, workspaceId)
 }
+
+func (bs *BoardService) GetByWorkspaceId(userId, workspaceId int) ([]entity.Board, error) {
+	return bs.repo.GetByWorkspaceId(userId, workspaceId)
+}
