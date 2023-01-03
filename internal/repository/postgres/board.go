@@ -92,5 +92,5 @@ func (br *BoardRepo) GetByWorkspaceId(userId, workspaceId int) ([]entity.Board, 
 	if err := tx.Select(&boards, query, workspaceId); err != nil {
 		return nil, err
 	}
-	return boards, nil
+	return boards, tx.Commit()
 }
