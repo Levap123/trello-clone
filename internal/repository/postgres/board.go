@@ -18,7 +18,7 @@ func NewBoardRepo(db *sqlx.DB) *BoardRepo {
 	}
 }
 
-func (br *BoardRepo) IsWorkspaceAssignToUser(userId, workspaceId int) (bool, error) {
+func (br *BoardRepo) IsWorkspaceAssignedToUser(userId, workspaceId int) (bool, error) {
 	tx, err := withTx(br.db)
 	if err != nil {
 		return false, err
@@ -29,7 +29,7 @@ func (br *BoardRepo) IsWorkspaceAssignToUser(userId, workspaceId int) (bool, err
 	if err := tx.Get(&counter, query, userId, workspaceId); err != nil {
 		return false, err
 	}
-	return counter > 0, nil
+	return counter > 0, tx.Commit()
 }
 
 func (br *BoardRepo) Create(title, background string, userId, workspaceId int) (int, error) {
@@ -39,7 +39,7 @@ func (br *BoardRepo) Create(title, background string, userId, workspaceId int) (
 	}
 	defer tx.Rollback()
 	var id int
-	ok, err := br.IsWorkspaceAssignToUser(userId, workspaceId)
+	ok, err := br.IsWorkspaceAssignedToUser(userId, workspaceId)
 	if err != nil {
 		return 0, err
 	}
@@ -59,7 +59,7 @@ func (br *BoardRepo) GetById(userId, boardId, workspaceId int) (entity.Board, er
 		return entity.Board{}, err
 	}
 	defer tx.Rollback()
-	ok, err := br.IsWorkspaceAssignToUser(userId, workspaceId)
+	ok, err := br.IsWorkspaceAssignedToUser(userId, workspaceId)
 	if err != nil {
 		return entity.Board{}, err
 	}
@@ -80,7 +80,7 @@ func (br *BoardRepo) GetByWorkspaceId(userId, workspaceId int) ([]entity.Board, 
 		return nil, err
 	}
 	defer tx.Rollback()
-	ok, err := br.IsWorkspaceAssignToUser(userId, workspaceId)
+	ok, err := br.IsWorkspaceAssignedToUser(userId, workspaceId)
 	if err != nil {
 		return nil, err
 	}
@@ -93,4 +93,24 @@ func (br *BoardRepo) GetByWorkspaceId(userId, workspaceId int) ([]entity.Board, 
 		return nil, err
 	}
 	return boards, tx.Commit()
+}
+
+func (br *BoardRepo) DeleteById(userId, workspaceId, boardId int) (int, error) {
+	tx, err := withTx(br.db)
+	if err != nil {
+		return 0, err
+	}
+	defer tx.Rollback()
+	ok, err := br.IsWorkspaceAssignedToUser(userId, workspaceId)
+	if err != nil {
+		return 0, err
+	}
+	if !ok {
+		return 0, errs.ErrInvalidWorkspace
+	}
+	query := fmt.Sprintf("DELETE FROM %s WHERE workspace_id = $1 and id = $2 RETURNING id", boardTable)
+	if err := tx.Get(&boardId, query, workspaceId, boardId); err != nil {
+		return 0, errs.ErrInvalidBoard
+	}
+	return boardId, tx.Commit()
 }

@@ -238,3 +238,12 @@ INFO:  2023/01/03 12:12:36 main.go:28: server is listening on: http://localhost:
 ERROR: 2023/01/03 12:12:55 board.go:54: workspace with this id does not exist or user does not have this workspace
 INFO:  2023/01/03 12:45:30 main.go:28: server is listening on: http://localhost:8080
 ERROR: 2023/01/03 12:45:38 board.go:74: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/03 13:37:17 main.go:19: Init db: Create tables: ERROR: insert or update on table "users_workspaces" violates foreign key constraint "users_workspaces_workspace_id_fkey" (SQLSTATE 23503)
+INFO:  2023/01/03 13:37:47 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/03 13:37:51 board.go:99: workspace does not have this board
+ERROR: 2023/01/03 13:37:54 board.go:99: workspace does not have this board
+ERROR: 2023/01/03 13:37:56 board.go:99: workspace does not have this board
+ERROR: 2023/01/03 13:37:57 board.go:99: workspace does not have this board
+INFO:  2023/01/03 13:38:22 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/03 13:38:29 board.go:99: workspace does not have this board
+ERROR: 2023/01/03 13:38:32 board.go:54: sql: no rows in result set

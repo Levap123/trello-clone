@@ -28,7 +28,7 @@ type Board interface {
 	Create(title, background string, userId, workspaceId int) (int, error)
 	GetByWorkspaceId(userId, worskspaceId int) ([]entity.Board, error)
 	GetById(userId, boardId, workspaceId int) (entity.Board, error)
-	// DeleteById(userId, workspace, boardId int) (int, error)
+	DeleteById(userId, workspace, boardId int) (int, error)
 }
 
 func NewRepoPostgres(db *sqlx.DB) *Repository {

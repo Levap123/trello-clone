@@ -26,3 +26,7 @@ func (bs *BoardService) GetById(userId, boardId, workspaceId int) (entity.Board,
 func (bs *BoardService) GetByWorkspaceId(userId, workspaceId int) ([]entity.Board, error) {
 	return bs.repo.GetByWorkspaceId(userId, workspaceId)
 }
+
+func (bs *BoardService) DeleteById(userId, workspaceId, boardId int) (int, error) {
+	return bs.repo.DeleteById(userId, workspaceId, boardId)
+}

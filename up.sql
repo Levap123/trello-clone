@@ -35,3 +35,8 @@ CREATE TABLE IF NOT EXISTS cards (
 	title TEXT NOT NULL,
 	list_id INT REFERENCES lists(id)
 );
+
+-- ALTER TABLE users_workspaces ADD FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE;
+-- ALTER TABLE users_workspaces ADD FOREIGN KEY (workspace_id) REFERENCES workspaces(id) ON DELETE CASCADE;
+-- ALTER TABLE lists ADD FOREIGN KEY (board_id) REFERENCES boards(id) ON DELETE CASCADE;
+-- ALTER TABLE cards ADD FOREIGN KEY (list_id) REFERENCES lists(id) ON DELETE CASCADE;

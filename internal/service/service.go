@@ -27,7 +27,7 @@ type Board interface {
 	Create(title, background string, userId, workspaceId int) (int, error)
 	GetByWorkspaceId(userId, workspaceId int) ([]entity.Board, error)
 	GetById(userId, boardId, workspaceId int) (entity.Board, error)
-	// DeleteById(userId, workspace, boardId int) (int, error)
+	DeleteById(userId, workspaceId, boardId int) (int, error)
 }
 
 func NewService(repo *repository.Repository) *Service {
