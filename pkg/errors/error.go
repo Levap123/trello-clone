@@ -12,7 +12,8 @@ var (
 	ErrPasswordIncorrect = errors.New("password is incorrect")
 	ErrInvalidSign       = errors.New("invalid signing method")
 	ErrInvalidClaims     = errors.New("token claims type invalid")
-	ErrInvalidWorkspace  = errors.New("Workspace with this id does not exist or user does not have this workspace")
+	ErrInvalidWorkspace  = errors.New("workspace with this id does not exist or user does not have this workspace")
+	ErrInvalidBoard      = errors.New("workspace does not have this board")
 )
 
 func Fail(err error, place string) error {

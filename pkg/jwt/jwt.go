@@ -1,7 +1,6 @@
 package jwt
 
 import (
-	"fmt"
 	"os"
 	"time"
 
@@ -17,7 +16,6 @@ type tokenClaims struct {
 }
 
 func GenerateJwt(id int) (string, error) {
-
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, &tokenClaims{
 		jwt.StandardClaims{
 			ExpiresAt: time.Now().Add(72 * time.Hour).Unix(),
@@ -26,7 +24,6 @@ func GenerateJwt(id int) (string, error) {
 	})
 	tokenString, err := token.SignedString(sign)
 	if err != nil {
-		fmt.Println(123)
 		return "", err
 	}
 	return tokenString, nil
@@ -37,17 +34,14 @@ func ParseToken(accessToken string) (int, error) {
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, errs.ErrInvalidSign
 		}
-
 		return sign, nil
 	})
 	if err != nil {
 		return 0, err
 	}
-
 	claims, ok := token.Claims.(*tokenClaims)
 	if !ok {
 		return 0, errs.ErrInvalidClaims
 	}
-
 	return claims.UserId, nil
 }

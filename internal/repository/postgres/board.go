@@ -3,6 +3,7 @@ package postgres
 import (
 	"fmt"
 
+	"github.com/Levap123/trello-clone/internal/entity"
 	errs "github.com/Levap123/trello-clone/pkg/errors"
 	"github.com/jmoiron/sqlx"
 )
@@ -15,6 +16,20 @@ func NewBoardRepo(db *sqlx.DB) *BoardRepo {
 	return &BoardRepo{
 		db: db,
 	}
+}
+
+func (br *BoardRepo) IsWorkspaceAssignToUser(userId, workspaceId int) (bool, error) {
+	tx, err := withTx(br.db)
+	if err != nil {
+		return false, err
+	}
+	defer tx.Rollback()
+	var counter int
+	query := fmt.Sprintf("SELECT COUNT(*) FROM %s WHERE user_id = $1 AND workspace_id = $2", workspaceRelationTable)
+	if err := tx.Get(&counter, query, userId, workspaceId); err != nil {
+		return false, err
+	}
+	return counter > 0, nil
 }
 
 func (br *BoardRepo) Create(title, background string, userId, workspaceId int) (int, error) {
@@ -38,16 +53,23 @@ func (br *BoardRepo) Create(title, background string, userId, workspaceId int) (
 	return id, tx.Commit()
 }
 
-func (br *BoardRepo) IsWorkspaceAssignToUser(userId, workspaceId int) (bool, error) {
+func (br *BoardRepo) GetById(userId, boardId, workspaceId int) (entity.Board, error) {
 	tx, err := withTx(br.db)
 	if err != nil {
-		return false, err
+		return entity.Board{}, err
 	}
 	defer tx.Rollback()
-	var counter int
-	query := fmt.Sprintf("SELECT COUNT(*) FROM %s WHERE user_id = $1 AND workspace_id = $2", workspaceRelationTable)
-	if err := tx.Get(&counter, query, userId, workspaceId); err != nil {
-		return false, err
+	ok, err := br.IsWorkspaceAssignToUser(userId, workspaceId)
+	if err != nil {
+		return entity.Board{}, err
 	}
-	return counter > 0, nil
+	if !ok {
+		return entity.Board{}, errs.ErrInvalidWorkspace
+	}
+	var board entity.Board
+	query := fmt.Sprintf("SELECT * FROM %s WHERE workspace_id = $1 AND id = $2", boardTable)
+	if err := tx.Get(&board, query, workspaceId, boardId); err != nil {
+		return entity.Board{}, err
+	}
+	return board, tx.Commit()
 }
