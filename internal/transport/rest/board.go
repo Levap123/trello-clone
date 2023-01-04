@@ -76,7 +76,7 @@ func (h *Handler) getBoardByWorkspaceId(w http.ResponseWriter, r *http.Request) 
 			webjson.JSONError(w, err, http.StatusBadRequest)
 			return
 		}
-		webjson.JSONError(w, errs.WebFail(http.StatusInternalServerError), http.StatusInternalServerError)
+		webjson.JSONError(w, errs.WebFail(http.StatusInternalServerError), http.StatusBadRequest)
 		return
 	}
 	webjson.SendJSON(w, boards)

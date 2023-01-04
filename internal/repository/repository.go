@@ -10,6 +10,7 @@ type Repository struct {
 	Auth
 	Workspace
 	Board
+	List
 }
 
 type Auth interface {
@@ -31,10 +32,15 @@ type Board interface {
 	DeleteById(userId, workspace, boardId int) (int, error)
 }
 
+type List interface {
+	Create(title string, userId, workspaceId, boardId int) (int, error)
+}
+
 func NewRepoPostgres(db *sqlx.DB) *Repository {
 	return &Repository{
 		Auth:      postgres.NewAuthRepo(db),
 		Workspace: postgres.NewWorkspaceRepo(db),
 		Board:     postgres.NewBoardRepo(db),
+		List:      postgres.NewListRepo(db),
 	}
 }

@@ -14,6 +14,7 @@ var (
 	ErrInvalidClaims     = errors.New("token claims type invalid")
 	ErrInvalidWorkspace  = errors.New("workspace with this id does not exist or user does not have this workspace")
 	ErrInvalidBoard      = errors.New("workspace does not have this board")
+	ErrNotExist          = errors.New("sql: no rows in result set")
 )
 
 func Fail(err error, place string) error {

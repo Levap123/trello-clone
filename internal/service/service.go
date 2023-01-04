@@ -9,6 +9,7 @@ type Service struct {
 	Auth
 	Workspace
 	Board
+	List
 }
 
 type Auth interface {
@@ -30,10 +31,15 @@ type Board interface {
 	DeleteById(userId, workspaceId, boardId int) (int, error)
 }
 
+type List interface {
+	Create(title string, userId, workspaceId, boardId int) (int, error)
+}
+
 func NewService(repo *repository.Repository) *Service {
 	return &Service{
 		Auth:      NewAuthService(repo.Auth),
 		Workspace: NewWorkspaceService(repo.Workspace),
 		Board:     NewBoardService(repo.Board),
+		List:      NewListService(repo.List),
 	}
 }

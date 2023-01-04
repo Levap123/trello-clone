@@ -18,20 +18,6 @@ func NewBoardRepo(db *sqlx.DB) *BoardRepo {
 	}
 }
 
-func (br *BoardRepo) IsWorkspaceAssignedToUser(userId, workspaceId int) (bool, error) {
-	tx, err := withTx(br.db)
-	if err != nil {
-		return false, err
-	}
-	defer tx.Rollback()
-	var counter int
-	query := fmt.Sprintf("SELECT COUNT(*) FROM %s WHERE user_id = $1 AND workspace_id = $2", workspaceRelationTable)
-	if err := tx.Get(&counter, query, userId, workspaceId); err != nil {
-		return false, err
-	}
-	return counter > 0, tx.Commit()
-}
-
 func (br *BoardRepo) Create(title, background string, userId, workspaceId int) (int, error) {
 	tx, err := withTx(br.db)
 	if err != nil {
@@ -39,7 +25,7 @@ func (br *BoardRepo) Create(title, background string, userId, workspaceId int) (
 	}
 	defer tx.Rollback()
 	var id int
-	ok, err := br.IsWorkspaceAssignedToUser(userId, workspaceId)
+	ok, err := IsWorkspaceAssignedToUser(br.db, userId, workspaceId)
 	if err != nil {
 		return 0, err
 	}
@@ -59,7 +45,14 @@ func (br *BoardRepo) GetById(userId, boardId, workspaceId int) (entity.Board, er
 		return entity.Board{}, err
 	}
 	defer tx.Rollback()
-	ok, err := br.IsWorkspaceAssignedToUser(userId, workspaceId)
+	ok, err := IsWorkspaceAssignedToUser(br.db, userId, workspaceId)
+	if err != nil {
+		return entity.Board{}, err
+	}
+	if !ok {
+		return entity.Board{}, errs.ErrInvalidWorkspace
+	}
+	ok, err = IsBoardAssignedToWorkspace(br.db, workspaceId, boardId)
 	if err != nil {
 		return entity.Board{}, err
 	}
@@ -80,7 +73,7 @@ func (br *BoardRepo) GetByWorkspaceId(userId, workspaceId int) ([]entity.Board, 
 		return nil, err
 	}
 	defer tx.Rollback()
-	ok, err := br.IsWorkspaceAssignedToUser(userId, workspaceId)
+	ok, err := IsWorkspaceAssignedToUser(br.db, userId, workspaceId)
 	if err != nil {
 		return nil, err
 	}
@@ -101,7 +94,7 @@ func (br *BoardRepo) DeleteById(userId, workspaceId, boardId int) (int, error) {
 		return 0, err
 	}
 	defer tx.Rollback()
-	ok, err := br.IsWorkspaceAssignedToUser(userId, workspaceId)
+	ok, err := IsWorkspaceAssignedToUser(br.db, userId, workspaceId)
 	if err != nil {
 		return 0, err
 	}

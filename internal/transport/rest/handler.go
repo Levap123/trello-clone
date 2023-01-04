@@ -39,6 +39,10 @@ func (h *Handler) InitRoutes() http.Handler {
 			boards.HandleFunc("", h.getBoardByWorkspaceId).Methods("GET")
 			boards.HandleFunc("/{id}", h.getBoardById).Methods("GET")
 			boards.HandleFunc("/{id}", h.deleteBoardById).Methods("DELETE")
+			lists := boards.PathPrefix("/{boardId}/lists").Subrouter()
+			{
+				lists.HandleFunc("", h.createList).Methods("POST")
+			}
 		}
 	}
 

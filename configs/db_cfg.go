@@ -14,7 +14,7 @@ type DbConfigs struct {
 func NewDbConfigs() *DbConfigs {
 	return &DbConfigs{
 		Name:     os.Getenv("USER_NAME"),
-		DbName: os.Getenv("DB_NAME"),
+		DbName:   os.Getenv("DB_NAME"),
 		Password: os.Getenv("DB_PASSWORD"),
 		Sslmode:  "disable",
 		Host:     os.Getenv("HOST"),
