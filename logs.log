@@ -414,3 +414,10 @@ INFO:  2023/01/04 22:05:38 main.go:28: server is listening on: http://localhost:
 ERROR: 2023/01/04 22:05:39 list.go:90: sql: no rows in result set
 ERROR: 2023/01/04 22:06:06 board.go:63: invalid object id
 ERROR: 2023/01/04 22:06:08 board.go:63: invalid object id
+INFO:  2023/01/04 22:06:46 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 22:06:49 workspace.go:45: workspace with this id does not exist or user does not have this workspace
+INFO:  2023/01/04 23:04:12 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 23:04:18 workspace.go:45: workspace with this id does not exist or user does not have this workspace
+INFO:  2023/01/04 23:05:07 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 23:05:09 list.go:128: sql: no rows in result set
+ERROR: 2023/01/04 23:05:13 list.go:94: sql: no rows in result set

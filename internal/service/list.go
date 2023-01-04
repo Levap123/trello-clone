@@ -26,3 +26,7 @@ func (ls *ListService) GetByBoardId(userId, workspaceId, boardId int) ([]entity.
 func (ls *ListService) GetById(userId, workspaceId, boardId, listId int) (entity.List, error) {
 	return ls.repo.GetById(userId, workspaceId, boardId, listId)
 }
+
+func (ls *ListService) DeleteById(userId, workspaceId, boardId, listId int) (int, error) {
+	return ls.repo.DeleteById(userId, workspaceId, boardId, listId)
+}

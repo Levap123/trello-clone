@@ -61,9 +61,25 @@ func (lr *ListRepo) GetById(userId, workspaceId, boardId, listId int) (entity.Li
 		return entity.List{}, err
 	}
 	var list entity.List
-	query := fmt.Sprintf("SELECT * FROM %s WHERE board_id = $1 and id = $2", listTable)
-	if err := tx.Get(&list, query, boardId, listId); err != nil {
+	query := fmt.Sprintf("SELECT * FROM %s WHERE  id = $1", listTable)
+	if err := tx.Get(&list, query, listId); err != nil {
 		return entity.List{}, err
 	}
 	return list, nil
+}
+func (lr *ListRepo) DeleteById(userId, workspaceId, boardId, listId int) (int, error) {
+	tx, err := withTx(lr.db)
+	if err != nil {
+		return 0, err
+	}
+	defer tx.Rollback()
+	if err := checkAllConstraints(lr.db, userId, workspaceId, boardId); err != nil {
+		return 0, err
+	}
+
+	query := fmt.Sprintf("DELETE FROM %s WHERE id = $1 RETURNING id", listTable)
+	if err := tx.Get(&listId, query, listId); err != nil {
+		return 0, err
+	}
+	return listId, tx.Commit()
 }

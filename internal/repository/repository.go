@@ -36,6 +36,7 @@ type List interface {
 	Create(title string, userId, workspaceId, boardId int) (int, error)
 	GetByBoardId(userId, workspaceId, boardId int) ([]entity.List, error)
 	GetById(userId, workspaceId, boardId, listId int) (entity.List, error)
+	DeleteById(userId, workspaceId, boardId, listId int) (int, error)
 }
 
 func NewRepoPostgres(db *sqlx.DB) *Repository {

@@ -105,3 +105,37 @@ func (h *Handler) getListById(w http.ResponseWriter, r *http.Request) {
 	}
 	webjson.SendJSON(w, list)
 }
+
+func (h *Handler) deleteListById(w http.ResponseWriter, r *http.Request) {
+	workspaceId, err := strconv.Atoi(mux.Vars(r)["workspaceId"])
+	if err != nil {
+		webjson.JSONError(w, errs.WebFail(http.StatusNotFound), http.StatusNotFound)
+		return
+	}
+	boardId, err := strconv.Atoi(mux.Vars(r)["boardId"])
+	if err != nil {
+		webjson.JSONError(w, errs.WebFail(http.StatusNotFound), http.StatusNotFound)
+		return
+	}
+	listId, err := strconv.Atoi(mux.Vars(r)["id"])
+	if err != nil {
+		webjson.JSONError(w, errs.WebFail(http.StatusNotFound), http.StatusNotFound)
+		return
+	}
+	userId := r.Context().Value("id").(int)
+	listId, err = h.service.List.DeleteById(userId, workspaceId, boardId, listId)
+	if err != nil {
+		h.logger.Err.Println(err)
+		if errors.Is(err, errs.ErrForeignKeyFailed) {
+			webjson.JSONError(w, err, http.StatusBadRequest)
+			return
+		}
+		if strings.Contains(err.Error(), "no rows in result set") {
+			webjson.JSONError(w, fmt.Errorf("list with this id does not exist"), http.StatusBadRequest)
+			return
+		}
+		webjson.JSONError(w, errs.WebFail(http.StatusInternalServerError), http.StatusInternalServerError)
+		return
+	}
+	webjson.SendJSON(w, map[string]int{"listId": listId})
+}
