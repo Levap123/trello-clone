@@ -51,6 +51,19 @@ func (lr *ListRepo) GetByBoardId(userId, workspaceId, boardId int) ([]entity.Lis
 	return lists, nil
 }
 
-func (lr *ListRepo) GetById(userId, workspaceId, boardId int) (entity.List, error) {
-
+func (lr *ListRepo) GetById(userId, workspaceId, boardId, listId int) (entity.List, error) {
+	tx, err := withTx(lr.db)
+	if err != nil {
+		return entity.List{}, err
+	}
+	defer tx.Rollback()
+	if err := checkAllConstraints(lr.db, userId, workspaceId, boardId); err != nil {
+		return entity.List{}, err
+	}
+	var list entity.List
+	query := fmt.Sprintf("SELECT * FROM %s WHERE board_id = $1 and id = $2", listTable)
+	if err := tx.Get(&list, query, boardId, listId); err != nil {
+		return entity.List{}, err
+	}
+	return list, nil
 }

@@ -22,3 +22,7 @@ func (ls *ListService) Create(title string, userId, workspaceId, boardId int) (i
 func (ls *ListService) GetByBoardId(userId, workspaceId, boardId int) ([]entity.List, error) {
 	return ls.repo.GetByBoardId(userId, workspaceId, boardId)
 }
+
+func (ls *ListService) GetById(userId, workspaceId, boardId, listId int) (entity.List, error) {
+	return ls.repo.GetById(userId, workspaceId, boardId, listId)
+}
