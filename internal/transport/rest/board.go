@@ -16,6 +16,7 @@ type boardInput struct {
 }
 
 func (h *Handler) createBoard(w http.ResponseWriter, r *http.Request) {
+	defaultLists := []string{"To Do", "Doing", "Finished"}
 	var input boardInput
 	webjson.ReadJSON(r, &input)
 	workspaceId, err := strconv.Atoi(mux.Vars(r)["workspaceId"])
@@ -33,6 +34,14 @@ func (h *Handler) createBoard(w http.ResponseWriter, r *http.Request) {
 		}
 		webjson.JSONError(w, errs.WebFail(http.StatusInternalServerError), http.StatusInternalServerError)
 		return
+	}
+	for i := 0; i < len(defaultLists); i++ {
+		_, err := h.service.List.Create(defaultLists[i], userId, workspaceId, boardId)
+		if err != nil {
+			h.logger.Err.Println(err)
+			webjson.JSONError(w, errs.WebFail(http.StatusInternalServerError), http.StatusInternalServerError)
+			return
+		}
 	}
 	webjson.SendJSON(w, map[string]int{"boardId": boardId})
 }
