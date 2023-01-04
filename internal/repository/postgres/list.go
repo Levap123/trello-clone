@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/Levap123/trello-clone/internal/entity"
-	errs "github.com/Levap123/trello-clone/pkg/errors"
 	"github.com/jmoiron/sqlx"
 )
 
@@ -18,34 +17,13 @@ func NewListRepo(db *sqlx.DB) *ListRepo {
 	}
 }
 
-func (lr *ListRepo) checkAllConstraints(userId, workspaceId, boardId int) (bool, error) {
-	ok, err := IsWorkspaceAssignedToUser(lr.db, userId, workspaceId)
-	if err != nil {
-		return false, err
-	}
-	if !ok {
-		return false, errs.ErrInvalidWorkspace
-	}
-	ok, err = IsBoardAssignedToWorkspace(lr.db, workspaceId, boardId)
-	if err != nil {
-		return false, err
-	}
-	if !ok {
-		return false, errs.ErrInvalidWorkspace
-	}
-	return true, nil
-}
 func (lr *ListRepo) Create(title string, userId, workspaceId, boardId int) (int, error) {
 	tx, err := withTx(lr.db)
 	if err != nil {
 		return 0, err
 	}
 	defer tx.Rollback()
-	ok, err := lr.checkAllConstraints(userId, workspaceId, boardId)
-	if err != nil {
-		return 0, err
-	}
-	if !ok {
+	if err := checkAllConstraints(lr.db, userId, workspaceId, boardId); err != nil {
 		return 0, err
 	}
 	var listId int
@@ -62,11 +40,7 @@ func (lr *ListRepo) GetByBoardId(userId, workspaceId, boardId int) ([]entity.Lis
 		return nil, err
 	}
 	defer tx.Rollback()
-	ok, err := lr.checkAllConstraints(userId, workspaceId, boardId)
-	if err != nil {
-		return nil, err
-	}
-	if !ok {
+	if err := checkAllConstraints(lr.db, userId, workspaceId, boardId); err != nil {
 		return nil, err
 	}
 	var lists []entity.List
@@ -75,4 +49,8 @@ func (lr *ListRepo) GetByBoardId(userId, workspaceId, boardId int) ([]entity.Lis
 		return nil, err
 	}
 	return lists, nil
+}
+
+func (lr *ListRepo) GetById(userId, workspaceId, boardId int) (entity.List, error) {
+
 }

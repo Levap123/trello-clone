@@ -25,13 +25,11 @@ func (br *BoardRepo) Create(title, background string, userId, workspaceId int) (
 	}
 	defer tx.Rollback()
 	var id int
-	ok, err := IsWorkspaceAssignedToUser(br.db, userId, workspaceId)
-	if err != nil {
+
+	if err := IsWorkspaceAssignedToUser(br.db, userId, workspaceId); err != nil {
 		return 0, err
 	}
-	if !ok {
-		return 0, errs.ErrInvalidWorkspace
-	}
+
 	query := fmt.Sprintf("INSERT INTO %s (title, background, workspace_id) VALUES ($1, $2, $3) RETURNING id", boardTable)
 	if err := tx.Get(&id, query, title, background, workspaceId); err != nil {
 		return 0, errs.Fail(err, "Create board")
@@ -45,19 +43,8 @@ func (br *BoardRepo) GetById(userId, boardId, workspaceId int) (entity.Board, er
 		return entity.Board{}, err
 	}
 	defer tx.Rollback()
-	ok, err := IsWorkspaceAssignedToUser(br.db, userId, workspaceId)
-	if err != nil {
+	if err := checkAllConstraints(br.db, userId, workspaceId, boardId); err != nil {
 		return entity.Board{}, err
-	}
-	if !ok {
-		return entity.Board{}, errs.ErrInvalidWorkspace
-	}
-	ok, err = IsBoardAssignedToWorkspace(br.db, workspaceId, boardId)
-	if err != nil {
-		return entity.Board{}, err
-	}
-	if !ok {
-		return entity.Board{}, errs.ErrInvalidWorkspace
 	}
 	var board entity.Board
 	query := fmt.Sprintf("SELECT * FROM %s WHERE workspace_id = $1 AND id = $2", boardTable)
@@ -73,12 +60,8 @@ func (br *BoardRepo) GetByWorkspaceId(userId, workspaceId int) ([]entity.Board, 
 		return nil, err
 	}
 	defer tx.Rollback()
-	ok, err := IsWorkspaceAssignedToUser(br.db, userId, workspaceId)
-	if err != nil {
+	if err := IsWorkspaceAssignedToUser(br.db, userId, workspaceId); err != nil {
 		return nil, err
-	}
-	if !ok {
-		return nil, errs.ErrInvalidWorkspace
 	}
 	var boards []entity.Board
 	query := fmt.Sprintf("SELECT * FROM %s WHERE workspace_id = $1", boardTable)
@@ -94,12 +77,9 @@ func (br *BoardRepo) DeleteById(userId, workspaceId, boardId int) (int, error) {
 		return 0, err
 	}
 	defer tx.Rollback()
-	ok, err := IsWorkspaceAssignedToUser(br.db, userId, workspaceId)
-	if err != nil {
+
+	if err := checkAllConstraints(br.db, userId, workspaceId, boardId); err != nil {
 		return 0, err
-	}
-	if !ok {
-		return 0, errs.ErrInvalidWorkspace
 	}
 	query := fmt.Sprintf("DELETE FROM %s WHERE workspace_id = $1 and id = $2 RETURNING id", boardTable)
 	if err := tx.Get(&boardId, query, workspaceId, boardId); err != nil {

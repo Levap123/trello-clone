@@ -65,3 +65,5 @@ func (h *Handler) getByBoardId(w http.ResponseWriter, r *http.Request) {
 	}
 	webjson.SendJSON(w, lists)
 }
+
+func (h *Handler) getListById(w http.ResponseWriter, r *http.Request){}

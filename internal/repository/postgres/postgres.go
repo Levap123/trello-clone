@@ -28,30 +28,38 @@ func withTx(db *sqlx.DB) (*sqlx.Tx, error) {
 	return db.Beginx()
 }
 
-func IsWorkspaceAssignedToUser(db *sqlx.DB, userId, workspaceId int) (bool, error) {
-	tx, err := withTx(db)
-	if err != nil {
-		return false, err
-	}
-	defer tx.Rollback()
+func IsWorkspaceAssignedToUser(db *sqlx.DB, userId, workspaceId int) error {
 	var counter int
 	query := fmt.Sprintf("SELECT COUNT(*) FROM %s WHERE user_id = $1 AND workspace_id = $2", workspaceRelationTable)
-	if err := tx.Get(&counter, query, userId, workspaceId); err != nil {
-		return false, err
+	if err := db.Get(&counter, query, userId, workspaceId); err != nil {
+		return err
 	}
-	return counter > 0, tx.Commit()
+	if counter <= 0 {
+		return errs.ErrForeignKeyFailed
+	}
+	return nil
 }
 
-func IsBoardAssignedToWorkspace(db *sqlx.DB, workspaceId, boardId int) (bool, error) {
-	tx, err := withTx(db)
-	if err != nil {
-		return false, err
-	}
-	defer tx.Rollback()
+func IsBoardAssignedToWorkspace(db *sqlx.DB, workspaceId, boardId int) error {
 	var counter int
 	query := fmt.Sprintf("SELECT COUNT(*) FROM %s WHERE workspace_id = $1 AND id = $2", boardTable)
-	if err := tx.Get(&counter, query, workspaceId, boardId); err != nil {
-		return false, err
+	if err := db.Get(&counter, query, workspaceId, boardId); err != nil {
+		return err
 	}
-	return counter > 0, tx.Commit()
+	if counter <= 0 {
+		return errs.ErrForeignKeyFailed
+	}
+	return nil
+}
+
+func checkAllConstraints(db *sqlx.DB, userId, workspaceId, boardId int) error {
+	err := IsWorkspaceAssignedToUser(db, userId, workspaceId)
+	if err != nil {
+		return err
+	}
+	err = IsBoardAssignedToWorkspace(db, workspaceId, boardId)
+	if err != nil {
+		return err
+	}
+	return nil
 }

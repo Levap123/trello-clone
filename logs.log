@@ -288,3 +288,76 @@ INFO:  2023/01/04 16:19:17 main.go:28: server is listening on: http://localhost:
 ERROR: 2023/01/04 16:19:19 list.go:58: workspace with this id does not exist or user does not have this workspace
 INFO:  2023/01/04 16:23:38 main.go:28: server is listening on: http://localhost:8080
 INFO:  2023/01/04 16:24:19 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/04 19:57:19 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 19:57:55 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 19:58:57 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 19:58:58 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 19:58:59 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 19:59:00 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 19:59:23 board.go:63: foreign key constraint failed
+ERROR: 2023/01/04 19:59:25 board.go:63: foreign key constraint failed
+INFO:  2023/01/04 20:04:16 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 20:04:20 board.go:63: invalid object id
+ERROR: 2023/01/04 21:32:38 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:32:52 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:33:35 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:33:36 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:33:37 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:33:37 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:33:38 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:33:50 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:33:50 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:33:51 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:33:51 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:34:14 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:34:14 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:34:15 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:34:34 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:34:34 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:34:35 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:34:41 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:34:41 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:34:42 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:34:54 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:34:54 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:34:55 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:35:12 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:35:12 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:35:13 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:35:22 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:35:22 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:35:37 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:35:37 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:35:38 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:35:38 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:36:08 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:36:09 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:36:10 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:36:10 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:36:11 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:36:20 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:36:20 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:36:20 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:37:07 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:37:08 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:37:09 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:37:23 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:37:23 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:37:25 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:37:34 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:37:34 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:37:35 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:37:46 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:37:46 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:37:47 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:38:43 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:38:55 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:38:56 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:38:57 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:40:00 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:40:54 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:40:54 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:40:54 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:44:00 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:44:02 board.go:63: invalid object id
+ERROR: 2023/01/04 21:44:04 board.go:63: invalid object id

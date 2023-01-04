@@ -61,7 +61,7 @@ func (h *Handler) getBoardById(w http.ResponseWriter, r *http.Request) {
 	board, err := h.service.Board.GetById(userId, boardId, workspaceId)
 	if err != nil {
 		h.logger.Err.Println(err)
-		if errors.Is(err, errs.ErrInvalidBoard) || errors.Is(err, errs.ErrInvalidWorkspace) {
+		if errors.Is(err, errs.ErrInvalidBoard) || errors.Is(err, errs.ErrInvalidWorkspace) || errors.Is(err, errs.ErrForeignKeyFailed) {
 			webjson.JSONError(w, err, http.StatusBadRequest)
 			return
 		}

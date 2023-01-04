@@ -15,6 +15,7 @@ var (
 	ErrInvalidWorkspace  = errors.New("workspace with this id does not exist or user does not have this workspace")
 	ErrInvalidBoard      = errors.New("workspace does not have this board")
 	ErrNotExist          = errors.New("sql: no rows in result set")
+	ErrForeignKeyFailed  = errors.New("invalid object id")
 )
 
 func Fail(err error, place string) error {

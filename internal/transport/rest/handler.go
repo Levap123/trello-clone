@@ -43,6 +43,7 @@ func (h *Handler) InitRoutes() http.Handler {
 			{
 				lists.HandleFunc("", h.createList).Methods("POST")
 				lists.HandleFunc("", h.getByBoardId).Methods("GET")
+				lists.HandleFunc("{id}", h.getListById).Methods("GET")
 			}
 		}
 	}
