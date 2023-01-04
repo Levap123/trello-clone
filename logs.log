@@ -283,3 +283,6 @@ ERROR: 2023/01/04 16:02:36 list.go:33: workspace with this id does not exist or 
 ERROR: 2023/01/04 16:02:58 list.go:33: workspace with this id does not exist or user does not have this workspace
 ERROR: 2023/01/04 16:03:44 list.go:33: workspace with this id does not exist or user does not have this workspace
 INFO:  2023/01/04 16:04:02 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/04 16:18:54 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/04 16:19:17 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 16:19:19 list.go:58: workspace with this id does not exist or user does not have this workspace

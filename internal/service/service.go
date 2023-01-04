@@ -33,6 +33,7 @@ type Board interface {
 
 type List interface {
 	Create(title string, userId, workspaceId, boardId int) (int, error)
+	GetByBoardId(userId, workspaceId, boardId int) ([]entity.List, error)
 }
 
 func NewService(repo *repository.Repository) *Service {
