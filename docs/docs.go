@@ -17,6 +17,47 @@ const docTemplate = `{
     "basePath": "{{.BasePath}}",
     "paths": {
         "/api/workspaces": {
+            "get": {
+                "description": "get workspace",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "workspace"
+                ],
+                "summary": "Get all worskpaces by id",
+                "operationId": "get-workspaces",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "With the bearer started",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/entity.Workspace"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/webjson.errorResponse"
+                        }
+                    }
+                }
+            },
             "post": {
                 "description": "create workspace",
                 "consumes": [
@@ -101,6 +142,51 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/entity.Workspace"
+                        }
+                    },
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/webjson.errorResponse"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "delete workspace",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "workspace"
+                ],
+                "summary": "Delete worskpace by id",
+                "operationId": "delete-workspace",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Workspace ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "With the bearer started",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/rest.postBody"
                         }
                     },
                     "default": {

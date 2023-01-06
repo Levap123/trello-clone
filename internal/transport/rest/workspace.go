@@ -70,9 +70,19 @@ func (h *Handler) getWorkspacesById(w http.ResponseWriter, r *http.Request) {
 	webjson.SendJSON(w, workSpace)
 }
 
+// @Summary Delete worskpace by id
+// @Tags workspace
+// @Description delete workspace
+// @ID delete-workspace
+// @Accept  json
+// @Produce  json
+// @Param id path string true "Workspace ID"
+// @Param Authorization header string true "With the bearer started" default(Bearer <Add access token here>)
+// @Success 200 {object} postBody
+// @Failure default {object} webjson.errorResponse
+// @Router /api/workspaces/{id} [delete]
 func (h *Handler) deleteWorkspaceById(w http.ResponseWriter, r *http.Request) {
 	userId := r.Context().Value("id").(int)
-	fmt.Println(userId)
 	workSpaceId, err := strconv.Atoi(mux.Vars(r)["id"])
 	if err != nil {
 		webjson.JSONError(w, fmt.Errorf("Invalid URL"), http.StatusNotFound)
@@ -88,4 +98,25 @@ func (h *Handler) deleteWorkspaceById(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	webjson.SendJSON(w, map[string]int{"workspaceId": workSpaceId})
+}
+
+// @Summary Get all worskpaces by id
+// @Tags workspace
+// @Description get workspace
+// @ID get-workspaces
+// @Accept  json
+// @Produce  json
+// @Param Authorization header string true "With the bearer started" default(Bearer <Add access token here>)
+// @Success 200 {array} entity.Workspace
+// @Failure default {object} webjson.errorResponse
+// @Router /api/workspaces [get]
+func (h *Handler) getWorkspacesByUserId(w http.ResponseWriter, r *http.Request) {
+	userId := r.Context().Value("id").(int)
+	workspaces, err := h.service.Workspace.GetAll(userId)
+	if err != nil {
+		h.logger.Err.Println(err)
+		webjson.JSONError(w, errs.WebFail(http.StatusBadRequest), http.StatusBadRequest)
+		return
+	}
+	webjson.SendJSON(w, workspaces)
 }

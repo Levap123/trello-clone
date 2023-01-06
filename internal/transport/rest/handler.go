@@ -33,6 +33,7 @@ func (h *Handler) InitRoutes() http.Handler {
 	workspace := api.PathPrefix("/workspaces").Subrouter()
 	{
 		workspace.HandleFunc("", h.createWorkspace).Methods("POST")
+		workspace.HandleFunc("", h.getWorkspacesByUserId).Methods("GET")
 		workspace.HandleFunc("/{id}", h.getWorkspacesById).Methods("GET")
 		workspace.HandleFunc("/{id}", h.deleteWorkspaceById).Methods("DELETE")
 		boards := workspace.PathPrefix("/{workspaceId}/boards").Subrouter()

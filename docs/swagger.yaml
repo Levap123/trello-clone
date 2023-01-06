@@ -55,6 +55,34 @@ info:
   version: 1.0.0// @host localhost:8080
 paths:
   /api/workspaces:
+    get:
+      consumes:
+      - application/json
+      description: get workspace
+      operationId: get-workspaces
+      parameters:
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/entity.Workspace'
+            type: array
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Get all worskpaces by id
+      tags:
+      - workspace
     post:
       consumes:
       - application/json
@@ -88,6 +116,37 @@ paths:
       tags:
       - workspace
   /api/workspaces/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete workspace
+      operationId: delete-workspace
+      parameters:
+      - description: Workspace ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/rest.postBody'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Delete worskpace by id
+      tags:
+      - workspace
     get:
       consumes:
       - application/json

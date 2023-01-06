@@ -461,3 +461,10 @@ INFO:  2023/01/06 11:40:27 main.go:31: server is listening on: http://localhost:
 INFO:  2023/01/06 11:42:29 main.go:31: server is listening on: http://localhost:8080
 INFO:  2023/01/06 11:44:44 main.go:31: server is listening on: http://localhost:8080
 INFO:  2023/01/06 11:48:28 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:53:52 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 11:54:07 workspace.go:96: Get all workspace: ERROR: column "user_id" does not exist (SQLSTATE 42703)
+ERROR: 2023/01/06 11:54:08 workspace.go:96: Get all workspace: ERROR: column "user_id" does not exist (SQLSTATE 42703)
+INFO:  2023/01/06 11:55:35 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:56:31 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:56:33 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:58:34 main.go:31: server is listening on: http://localhost:8080

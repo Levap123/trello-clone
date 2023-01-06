@@ -43,7 +43,8 @@ func (wr *WorkspaceRepo) GetAll(userId int) ([]entity.Workspace, error) {
 	}
 	defer tx.Rollback()
 	var workspaces []entity.Workspace
-	query := fmt.Sprintf("SELECT * FROM %s WHERE user_id = $1", workspacesTable)
+	query := fmt.Sprintf(`SELECT w.id, w.logo, w.title, uw.user_id FROM %s AS uw JOIN workspaces as w ON uw.workspace_id = w.id 
+	WHERE uw.user_id = $1`, workspaceRelationTable)
 	if err := tx.Select(&workspaces, query, userId); err != nil {
 		return nil, errs.Fail(err, "Get all workspace")
 	}
@@ -82,4 +83,3 @@ func (wr *WorkspaceRepo) DeleteById(userId, workspaceId int) (int, error) {
 	}
 	return id, tx.Commit()
 }
-
