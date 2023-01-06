@@ -1,0 +1,525 @@
+INFO:  2022/12/16 22:43:46 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:43:46 main.go:29: listen tcp: address ::8080: too many colons in address
+INFO:  2022/12/16 22:44:19 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:45:23 auth.go:24: Create user: ERROR: relation "users" does not exist (SQLSTATE 42P01)
+ERROR: 2022/12/16 22:46:26 main.go:18: Init db: Create tables: ERROR: syntax error at or near "AUTOINCREMENT" (SQLSTATE 42601)
+ERROR: 2022/12/16 22:47:11 main.go:18: Init db: Create tables: ERROR: syntax error at or near "SERIAL" (SQLSTATE 42601)
+INFO:  2022/12/16 22:47:46 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/16 22:48:18 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:49:41 main.go:18: Init db: Create tables: ERROR: syntax error at or near ")" (SQLSTATE 42601)
+INFO:  2022/12/16 22:49:51 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:51:26 main.go:18: Init db: Create tables: ERROR: syntax error at or near ")" (SQLSTATE 42601)
+INFO:  2022/12/16 22:51:36 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:51:40 auth.go:24: Create user: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+INFO:  2022/12/16 22:55:18 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:55:21 auth.go:29: Create user: user with this name or username is already exists
+ERROR: 2022/12/16 22:55:22 auth.go:29: Create user: user with this name or username is already exists
+ERROR: 2022/12/16 22:55:23 auth.go:29: Create user: user with this name or username is already exists
+INFO:  2022/12/16 22:55:30 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/16 22:55:59 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/16 22:56:02 auth.go:26: user with this name or username is already exists
+INFO:  2022/12/16 22:59:05 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:01:13 main.go:29: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:23:35 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/17 15:24:02 auth.go:42: user with this name or username is already exists
+INFO:  2022/12/17 15:25:50 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:29:44 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:32:18 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:33:06 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:36:04 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:41:14 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 15:42:24 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 16:15:32 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 16:16:38 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 16:18:53 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 16:19:36 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 16:21:12 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 16:23:25 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 16:26:39 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 16:28:00 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 16:28:14 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 16:28:24 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 16:28:44 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/17 16:29:15 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 14:30:44 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:31:26 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:06 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:07 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:08 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:09 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:09 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:20 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:33 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:32:53 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:33:24 main.go:18: Init db: Create tables: ERROR: syntax error at or near "(" (SQLSTATE 42601)
+INFO:  2022/12/20 14:33:51 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 14:34:21 main.go:18: Init db: Create tables: ERROR: type "id" does not exist (SQLSTATE 42704)
+INFO:  2022/12/20 14:34:37 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/20 14:34:50 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/20 14:41:43 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 14:49:52 main.go:18: Init db: Create tables: ERROR: syntax error at or near ")" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:50:01 main.go:18: Init db: Create tables: ERROR: syntax error at or near ")" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:50:13 main.go:18: Init db: Create tables: ERROR: syntax error at or near "user" (SQLSTATE 42601)
+ERROR: 2022/12/20 14:50:30 main.go:18: Init db: Create tables: ERROR: syntax error at or near "CREATE" (SQLSTATE 42601)
+INFO:  2022/12/20 14:50:38 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/20 15:25:35 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/20 15:28:10 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/20 15:29:52 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:29:54 workspace.go:20: Create workspace: ERROR: column "user_id" of relation "workspaces" does not exist (SQLSTATE 42703)
+INFO:  2022/12/20 15:51:46 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:51:49 workspace.go:26: Create workspace: ERROR: column "workspaceid" does not exist (SQLSTATE 42703)
+INFO:  2022/12/20 15:52:19 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:52:21 workspace.go:26: Create workspace: expected 2 arguments, got 3
+INFO:  2022/12/20 15:52:36 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:52:38 workspace.go:23: Workspace with this id does not exist
+ERROR: 2022/12/20 15:52:38 workspace.go:26: Workspace with this id does not exist
+INFO:  2022/12/20 15:53:30 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:53:32 workspace.go:20: Create relation: ERROR: insert or update on table "users_workspaces" violates foreign key constraint "users_workspaces_workspace_id_fkey" (SQLSTATE 23503)
+INFO:  2022/12/20 15:54:18 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:54:20 workspace.go:20: Create relation: ERROR: insert or update on table "users_workspaces" violates foreign key constraint "users_workspaces_workspace_id_fkey" (SQLSTATE 23503)
+INFO:  2022/12/20 15:55:58 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/20 15:56:00 workspace.go:20: Create relation: ERROR: insert or update on table "users_workspaces" violates foreign key constraint "users_workspaces_workspace_id_fkey" (SQLSTATE 23503)
+INFO:  2022/12/20 15:56:47 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 21:55:52 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 22:10:04 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 22:11:47 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:12:37 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 22:13:27 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 22:15:55 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 22:16:01 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 22:16:41 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:16:53 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 22:17:38 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:17:38 workspace.go:40: ERROR: column "user_id" does not exist (SQLSTATE 42703)
+ERROR: 2022/12/29 22:20:07 workspace.go:40: ERROR: column "user_id" does not exist (SQLSTATE 42703)
+INFO:  2022/12/29 22:20:49 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:20:50 workspace.go:40: expected 2 arguments, got 1
+INFO:  2022/12/29 22:28:33 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:28:36 workspace.go:40: expected 2 arguments, got 1
+ERROR: 2022/12/29 22:28:37 workspace.go:40: expected 2 arguments, got 1
+INFO:  2022/12/29 22:29:36 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:29:37 workspace.go:40: expected slice but got struct
+INFO:  2022/12/29 22:30:33 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 22:31:11 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:31:12 workspace.go:40: expected slice but got struct
+ERROR: 2022/12/29 22:31:13 workspace.go:40: expected slice but got struct
+INFO:  2022/12/29 22:31:30 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:31:38 workspace.go:40: sql: no rows in result set
+INFO:  2022/12/29 22:31:53 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:31:55 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 22:33:50 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:33:51 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 22:39:58 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:40:28 workspace.go:59: Delete workspace: ERROR: column "workspace_id" does not exist (SQLSTATE 42703)
+INFO:  2022/12/29 22:40:44 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:40:51 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:41:05 auth.go:43: user with this name or username is already exists
+ERROR: 2022/12/29 22:41:13 auth.go:43: user with this name or username is already exists
+ERROR: 2022/12/29 22:41:26 auth.go:43: user with this name or username is already exists
+ERROR: 2022/12/29 22:41:35 auth.go:43: user with this name or username is already exists
+INFO:  2022/12/29 22:41:48 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:41:49 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+INFO:  2022/12/29 22:43:16 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:43:19 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+INFO:  2022/12/29 22:44:51 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:45:00 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:45:03 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:45:03 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:45:04 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:45:04 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:45:35 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+INFO:  2022/12/29 22:46:20 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:46:23 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:28 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:30 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:31 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:31 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:32 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:33 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:33 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:34 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:46:34 auth.go:47: ERROR: duplicate key value violates unique constraint "users_name_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:47:00 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:47:01 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+ERROR: 2022/12/29 22:47:04 auth.go:47: ERROR: duplicate key value violates unique constraint "users_email_key" (SQLSTATE 23505)
+INFO:  2022/12/29 22:47:36 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:48:28 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:48:30 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:48:39 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 22:48:42 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:49:10 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:49:56 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:51:03 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:51:37 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 22:51:39 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 22:51:42 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 22:52:42 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:53:20 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 22:54:04 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:54:11 workspace.go:59: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 22:54:26 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:55:24 workspace.go:59: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 22:59:18 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 22:59:30 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 22:59:43 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 23:00:33 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:01:09 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:01:18 workspace.go:59: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 23:05:43 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:07:12 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:07:13 workspace.go:59: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 23:15:40 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:15:51 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:15:51 workspace.go:59: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 23:16:02 main.go:27: server is listening on: http://localhost:8080
+INFO:  2022/12/29 23:16:26 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:16:37 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:16:39 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:16:51 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:16:54 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:16:55 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 23:17:56 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:18:03 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:18:05 workspace.go:59: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 23:18:48 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:18:51 workspace.go:59: ERROR: there is no parameter $1 (SQLSTATE 42P02)
+INFO:  2022/12/29 23:19:02 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:19:11 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:19:32 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:19:42 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:19:55 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:19:56 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:19:57 workspace.go:59: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 23:20:16 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:21:10 workspace.go:59: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:21:18 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 23:22:52 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:22:57 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:23:07 workspace.go:40: Workspace with this id does not exist or user does not have this workspace
+INFO:  2022/12/29 23:26:09 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:26:11 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:14 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:15 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:16 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:17 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:17 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:18 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:19 workspace.go:60: Delete workspace: sql: no rows in result set
+ERROR: 2022/12/29 23:26:19 workspace.go:60: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 23:28:40 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:28:44 workspace.go:60: Delete workspace: sql: no rows in result set
+INFO:  2022/12/29 23:30:23 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:30:34 workspace.go:60: ERROR: syntax error at or near "*" (SQLSTATE 42601)
+INFO:  2022/12/29 23:41:28 main.go:27: server is listening on: http://localhost:8080
+ERROR: 2022/12/29 23:41:36 workspace.go:60: Workspace with this id does not exist or user does not have this workspace
+ERROR: 2022/12/29 23:41:38 workspace.go:60: Workspace with this id does not exist or user does not have this workspace
+INFO:  2023/01/02 16:15:54 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/02 16:19:19 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/02 16:19:29 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/02 16:21:06 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/02 16:21:31 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/02 16:21:32 board.go:29: ERROR: syntax error at or near "AND" (SQLSTATE 42601)
+INFO:  2023/01/02 16:22:14 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/02 16:23:24 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/02 16:27:07 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/02 16:27:17 board.go:29: Workspace with this id does not exist or user does not have this workspace
+INFO:  2023/01/03 12:08:47 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/03 12:09:08 board.go:29: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/03 12:09:32 board.go:54: expected slice but got struct
+INFO:  2023/01/03 12:10:00 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/03 12:10:02 board.go:54: missing destination name background in *entity.Workspace
+ERROR: 2023/01/03 12:10:03 board.go:54: missing destination name background in *entity.Workspace
+INFO:  2023/01/03 12:11:14 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/03 12:11:16 board.go:54: missing destination name workspace_id in *entity.Board
+INFO:  2023/01/03 12:11:46 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/03 12:11:49 board.go:54: missing destination name workspace_id in *entity.Board
+ERROR: 2023/01/03 12:11:50 board.go:54: missing destination name workspace_id in *entity.Board
+INFO:  2023/01/03 12:12:36 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/03 12:12:55 board.go:54: workspace with this id does not exist or user does not have this workspace
+INFO:  2023/01/03 12:45:30 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/03 12:45:38 board.go:74: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/03 13:37:17 main.go:19: Init db: Create tables: ERROR: insert or update on table "users_workspaces" violates foreign key constraint "users_workspaces_workspace_id_fkey" (SQLSTATE 23503)
+INFO:  2023/01/03 13:37:47 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/03 13:37:51 board.go:99: workspace does not have this board
+ERROR: 2023/01/03 13:37:54 board.go:99: workspace does not have this board
+ERROR: 2023/01/03 13:37:56 board.go:99: workspace does not have this board
+ERROR: 2023/01/03 13:37:57 board.go:99: workspace does not have this board
+INFO:  2023/01/03 13:38:22 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/03 13:38:29 board.go:99: workspace does not have this board
+ERROR: 2023/01/03 13:38:32 board.go:54: sql: no rows in result set
+INFO:  2023/01/04 15:30:04 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/04 15:31:56 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 15:31:58 list.go:33: sql: no rows in result set
+INFO:  2023/01/04 15:32:38 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/04 15:32:59 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 15:33:10 list.go:33: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/04 15:33:28 board.go:54: sql: no rows in result set
+ERROR: 2023/01/04 15:40:21 main.go:19: Init db: Create tables: ERROR: insert or update on table "users_workspaces" violates foreign key constraint "users_workspaces_workspace_id_fkey" (SQLSTATE 23503)
+ERROR: 2023/01/04 15:40:48 main.go:19: Init db: Create tables: ERROR: insert or update on table "users_workspaces" violates foreign key constraint "users_workspaces_workspace_id_fkey" (SQLSTATE 23503)
+ERROR: 2023/01/04 15:40:51 main.go:19: Init db: Create tables: ERROR: insert or update on table "users_workspaces" violates foreign key constraint "users_workspaces_workspace_id_fkey" (SQLSTATE 23503)
+INFO:  2023/01/04 15:41:08 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 15:41:13 board.go:54: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/04 15:41:47 list.go:33: ERROR: insert or update on table "lists" violates foreign key constraint "lists_board_id_fkey" (SQLSTATE 23503)
+ERROR: 2023/01/04 15:41:50 list.go:33: ERROR: insert or update on table "lists" violates foreign key constraint "lists_board_id_fkey" (SQLSTATE 23503)
+ERROR: 2023/01/04 15:42:02 board.go:54: sql: no rows in result set
+ERROR: 2023/01/04 15:46:25 board.go:54: sql: no rows in result set
+ERROR: 2023/01/04 15:46:26 board.go:54: sql: no rows in result set
+INFO:  2023/01/04 15:50:16 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 15:50:17 board.go:55: sql: no rows in result set
+ERROR: 2023/01/04 15:50:18 board.go:55: sql: no rows in result set
+INFO:  2023/01/04 16:00:20 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 16:00:22 board.go:54: ERROR: column "workspaceid" does not exist (SQLSTATE 42703)
+INFO:  2023/01/04 16:00:46 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 16:00:50 board.go:54: workspace with this id does not exist or user does not have this workspace
+INFO:  2023/01/04 16:01:56 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 16:02:03 list.go:33: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/04 16:02:06 list.go:33: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/04 16:02:07 list.go:33: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/04 16:02:09 list.go:33: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/04 16:02:11 list.go:33: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/04 16:02:28 list.go:33: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/04 16:02:36 list.go:33: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/04 16:02:36 list.go:33: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/04 16:02:58 list.go:33: workspace with this id does not exist or user does not have this workspace
+ERROR: 2023/01/04 16:03:44 list.go:33: workspace with this id does not exist or user does not have this workspace
+INFO:  2023/01/04 16:04:02 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/04 16:18:54 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/04 16:19:17 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 16:19:19 list.go:58: workspace with this id does not exist or user does not have this workspace
+INFO:  2023/01/04 16:23:38 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/04 16:24:19 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/04 19:57:19 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 19:57:55 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 19:58:57 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 19:58:58 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 19:58:59 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 19:59:00 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 19:59:23 board.go:63: foreign key constraint failed
+ERROR: 2023/01/04 19:59:25 board.go:63: foreign key constraint failed
+INFO:  2023/01/04 20:04:16 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 20:04:20 board.go:63: invalid object id
+ERROR: 2023/01/04 21:32:38 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:32:52 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:33:35 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:33:36 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:33:37 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:33:37 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:33:38 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:33:50 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:33:50 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:33:51 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:33:51 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:34:14 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:34:14 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:34:15 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:34:34 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:34:34 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:34:35 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:34:41 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:34:41 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:34:42 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:34:54 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:34:54 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:34:55 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:35:12 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:35:12 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:35:13 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:35:22 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:35:22 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:35:37 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:35:37 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:35:38 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:35:38 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:36:08 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:36:09 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:36:10 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:36:10 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:36:11 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:36:20 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:36:20 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:36:20 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:37:07 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:37:08 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:37:09 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:37:23 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:37:23 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:37:25 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:37:34 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:37:34 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:37:35 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:37:46 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:37:46 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:37:47 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:38:43 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:38:55 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:38:56 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:38:57 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:40:00 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:40:54 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:40:54 board.go:63: sql: no rows in result set
+ERROR: 2023/01/04 21:40:54 board.go:63: sql: no rows in result set
+INFO:  2023/01/04 21:44:00 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:44:02 board.go:63: invalid object id
+ERROR: 2023/01/04 21:44:04 board.go:63: invalid object id
+INFO:  2023/01/04 21:51:48 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/04 21:52:34 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/04 21:52:46 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:52:58 board.go:63: invalid object id
+ERROR: 2023/01/04 21:53:08 board.go:63: invalid object id
+ERROR: 2023/01/04 21:53:10 board.go:63: invalid object id
+ERROR: 2023/01/04 21:53:49 list.go:58: invalid object id
+ERROR: 2023/01/04 21:53:53 list.go:58: invalid object id
+ERROR: 2023/01/04 21:53:54 list.go:58: invalid object id
+ERROR: 2023/01/04 21:53:56 list.go:58: invalid object id
+ERROR: 2023/01/04 21:53:57 list.go:58: invalid object id
+ERROR: 2023/01/04 21:54:19 list.go:88: sql: no rows in result set
+ERROR: 2023/01/04 21:54:27 list.go:88: sql: no rows in result set
+ERROR: 2023/01/04 21:54:47 list.go:88: sql: no rows in result set
+ERROR: 2023/01/04 21:54:48 list.go:88: sql: no rows in result set
+ERROR: 2023/01/04 21:55:11 list.go:88: sql: no rows in result set
+ERROR: 2023/01/04 21:55:12 list.go:88: sql: no rows in result set
+ERROR: 2023/01/04 21:55:49 list.go:88: sql: no rows in result set
+INFO:  2023/01/04 21:56:10 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:56:12 list.go:88: sql: no rows in result set
+ERROR: 2023/01/04 21:56:26 list.go:88: invalid object id
+ERROR: 2023/01/04 21:56:32 list.go:88: invalid object id
+ERROR: 2023/01/04 21:56:34 list.go:88: sql: no rows in result set
+INFO:  2023/01/04 21:57:12 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:57:17 list.go:88: sql: no rows in result set
+INFO:  2023/01/04 21:57:31 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:57:31 list.go:88: sql: no rows in result set
+INFO:  2023/01/04 21:58:10 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:58:16 list.go:88: sql: no rows in result set
+INFO:  2023/01/04 21:59:45 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 21:59:46 list.go:89: sql: no rows in result set
+ERROR: 2023/01/04 21:59:46 list.go:89: sql: no rows in result set
+INFO:  2023/01/04 22:00:00 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 22:00:00 list.go:89: sql: no rows in result set
+ERROR: 2023/01/04 22:00:01 list.go:89: sql: no rows in result set
+INFO:  2023/01/04 22:00:13 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 22:00:13 list.go:89: sql: no rows in result set
+INFO:  2023/01/04 22:01:59 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 22:02:00 list.go:90: sql: no rows in result set
+INFO:  2023/01/04 22:02:18 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 22:02:20 list.go:90: sql: no rows in result set
+INFO:  2023/01/04 22:02:36 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 22:02:36 list.go:90: sql: no rows in result set
+ERROR: 2023/01/04 22:02:37 list.go:90: sql: no rows in result set
+INFO:  2023/01/04 22:02:47 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 22:02:47 list.go:90: sql: no rows in result set
+INFO:  2023/01/04 22:05:16 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 22:05:17 list.go:90: sql: no rows in result set
+ERROR: 2023/01/04 22:05:18 list.go:90: sql: no rows in result set
+INFO:  2023/01/04 22:05:38 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 22:05:39 list.go:90: sql: no rows in result set
+ERROR: 2023/01/04 22:06:06 board.go:63: invalid object id
+ERROR: 2023/01/04 22:06:08 board.go:63: invalid object id
+INFO:  2023/01/04 22:06:46 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 22:06:49 workspace.go:45: workspace with this id does not exist or user does not have this workspace
+INFO:  2023/01/04 23:04:12 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 23:04:18 workspace.go:45: workspace with this id does not exist or user does not have this workspace
+INFO:  2023/01/04 23:05:07 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/04 23:05:09 list.go:128: sql: no rows in result set
+ERROR: 2023/01/04 23:05:13 list.go:94: sql: no rows in result set
+INFO:  2023/01/05 16:24:40 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/05 16:37:33 main.go:19: Init db: Create tables: ERROR: insert or update on table "boards" violates foreign key constraint "boards_workspace_id_fkey" (SQLSTATE 23503)
+ERROR: 2023/01/05 16:38:41 main.go:19: Init db: Create tables: ERROR: syntax error at or near "p" (SQLSTATE 42601)
+INFO:  2023/01/05 16:39:12 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/05 17:59:11 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/05 18:01:10 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/05 18:01:33 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/05 18:12:34 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/05 18:13:24 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/05 18:13:25 card.go:63: scannable dest type slice with >1 columns (3) in result
+INFO:  2023/01/05 18:14:02 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/05 18:14:03 card.go:63: scannable dest type slice with >1 columns (3) in result
+INFO:  2023/01/05 18:14:14 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/05 20:38:51 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/05 20:40:04 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/05 20:42:10 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/05 22:39:37 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:08:52 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 11:09:34 card.go:63: invalid object id
+INFO:  2023/01/06 11:14:07 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 11:14:38 auth.go:54: user with this name or username is already exists
+ERROR: 2023/01/06 11:14:41 auth.go:54: user with this name or username is already exists
+INFO:  2023/01/06 11:15:34 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:17:34 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:17:49 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:18:52 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:18:56 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:19:10 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:20:29 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:20:58 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:23:40 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:27:40 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:34:04 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:34:38 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:38:25 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:40:12 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:40:27 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:42:29 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:44:44 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:48:28 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:53:52 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 11:54:07 workspace.go:96: Get all workspace: ERROR: column "user_id" does not exist (SQLSTATE 42703)
+ERROR: 2023/01/06 11:54:08 workspace.go:96: Get all workspace: ERROR: column "user_id" does not exist (SQLSTATE 42703)
+INFO:  2023/01/06 11:55:35 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:56:31 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:56:33 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:58:34 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 12:00:44 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 12:03:09 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 12:03:31 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 12:04:50 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 12:05:49 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 12:12:25 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 12:20:28 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 12:20:32 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 12:23:24 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 12:23:49 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 12:26:36 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 12:27:30 board.go:144: invalid object id
+ERROR: 2023/01/06 12:27:41 board.go:107: invalid object id
+INFO:  2023/01/06 12:28:32 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 12:28:34 board.go:107: invalid object id
+ERROR: 2023/01/06 12:28:43 board.go:144: workspace does not have this board
+ERROR: 2023/01/06 12:29:04 board.go:144: workspace does not have this board
+ERROR: 2023/01/06 12:29:14 board.go:144: workspace does not have this board
+ERROR: 2023/01/06 12:31:14 board.go:144: workspace does not have this board
+ERROR: 2023/01/06 12:31:15 board.go:144: workspace does not have this board
+INFO:  2023/01/06 12:45:06 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 12:47:39 board.go:144: invalid object id
+INFO:  2023/01/06 12:47:59 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 12:48:11 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 12:48:56 board.go:42: invalid object id
+ERROR: 2023/01/06 12:49:40 board.go:42: invalid object id
+ERROR: 2023/01/06 12:50:18 board.go:42: invalid object id
+ERROR: 2023/01/06 12:50:19 board.go:42: invalid object id
+ERROR: 2023/01/06 12:50:19 board.go:42: invalid object id
+ERROR: 2023/01/06 12:50:54 board.go:42: invalid object id
+INFO:  2023/01/06 12:51:43 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 12:51:44 board.go:44: invalid object id
+ERROR: 2023/01/06 12:53:41 board.go:89: invalid object id
+INFO:  2023/01/06 12:55:58 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 12:56:28 board.go:120: invalid object id
+INFO:  2023/01/06 13:46:39 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 13:47:11 list.go:48: invalid object id
+ERROR: 2023/01/06 13:47:16 list.go:48: invalid object id
+INFO:  2023/01/06 13:48:51 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 13:55:08 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 13:56:08 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 13:57:42 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 13:59:58 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 14:00:17 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 14:02:19 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 14:02:31 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 14:03:20 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 14:03:43 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 14:04:14 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 14:05:28 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 14:06:22 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 14:06:36 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 14:25:32 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 14:25:57 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 14:26:21 main.go:31: server is listening on: http://localhost:8080
