@@ -19,6 +19,6 @@ func (cs *CardService) Create(title string, userId, workspaceId, boardId, ListId
 	return cs.repo.Create(title, userId, workspaceId, boardId, ListId)
 }
 
-func (cs *CardService) GetByListId(userId, workspaceId, boardId, ListId int) ([]entity.Cards, error) {
+func (cs *CardService) GetByListId(userId, workspaceId, boardId, ListId int) ([]entity.Card, error) {
 	return cs.repo.GetByListId(userId, workspaceId, boardId, ListId)
 }

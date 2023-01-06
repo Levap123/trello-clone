@@ -11,6 +11,15 @@ definitions:
       workspaceId:
         type: integer
     type: object
+  entity.Card:
+    properties:
+      id:
+        type: integer
+      listId:
+        type: string
+      title:
+        type: string
+    type: object
   entity.List:
     properties:
       boardId:
@@ -35,6 +44,11 @@ definitions:
     properties:
       background:
         type: string
+      title:
+        type: string
+    type: object
+  rest.cardInput:
+    properties:
       title:
         type: string
     type: object
@@ -445,6 +459,97 @@ paths:
       summary: Get list by list id
       tags:
       - list
+  /api/workspaces/{workspaceId}/boards/{boardId}/lists/{listId}/cards:
+    get:
+      consumes:
+      - application/json
+      description: get cards
+      operationId: get-cards
+      parameters:
+      - description: Workspace ID
+        in: path
+        name: workspaceId
+        required: true
+        type: string
+      - description: Board ID
+        in: path
+        name: boardId
+        required: true
+        type: string
+      - description: list ID
+        in: path
+        name: listId
+        required: true
+        type: string
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/entity.Card'
+            type: array
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Get cards by list id
+      tags:
+      - card
+    post:
+      consumes:
+      - application/json
+      description: create card
+      operationId: create-card
+      parameters:
+      - description: credentials
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/rest.cardInput'
+      - description: Workspace ID
+        in: path
+        name: workspaceId
+        required: true
+        type: string
+      - description: Board ID
+        in: path
+        name: boardId
+        required: true
+        type: string
+      - description: List ID
+        in: path
+        name: listId
+        required: true
+        type: string
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/rest.postBody'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Create card
+      tags:
+      - card
   /api/workspaces/{workspaceId}/boards/{id}:
     delete:
       consumes:

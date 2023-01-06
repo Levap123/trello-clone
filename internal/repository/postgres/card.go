@@ -34,7 +34,7 @@ func (cr *CardRepo) Create(title string, userId, workspaceId, boardId, listId in
 	return cardId, tx.Commit()
 }
 
-func (cr *CardRepo) GetByListId(userId, workspaceId, boardId, listId int) ([]entity.Cards, error) {
+func (cr *CardRepo) GetByListId(userId, workspaceId, boardId, listId int) ([]entity.Card, error) {
 	tx, err := withTx(cr.db)
 	if err != nil {
 		return nil, err
@@ -43,7 +43,7 @@ func (cr *CardRepo) GetByListId(userId, workspaceId, boardId, listId int) ([]ent
 	if err := checkAllConstraints(cr.db, userId, workspaceId, boardId); err != nil {
 		return nil, err
 	}
-	var cards []entity.Cards
+	var cards []entity.Card
 	query := fmt.Sprintf("SELECT * FROM %s WHERE list_id = $1", cardTable)
 	if err := tx.Select(&cards, query, listId); err != nil {
 		return nil, err
