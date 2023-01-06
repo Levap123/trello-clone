@@ -11,8 +11,7 @@ Rest API clone of [trello](https://trello.com/)
 - CRUD application
 - Docker-compose
 - Clean architecture
-
-
+- PosrgreSQL
 
 ## Run Locally
 
