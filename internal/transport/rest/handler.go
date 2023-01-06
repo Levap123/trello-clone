@@ -3,9 +3,11 @@ package rest
 import (
 	"net/http"
 
+	_ "github.com/Levap123/trello-clone/docs"
 	"github.com/Levap123/trello-clone/internal/service"
 	"github.com/Levap123/trello-clone/pkg/logger"
 	"github.com/gorilla/mux"
+	httpSwagger "github.com/swaggo/http-swagger"
 )
 
 type Handler struct {
@@ -45,9 +47,18 @@ func (h *Handler) InitRoutes() http.Handler {
 				lists.HandleFunc("", h.getByBoardId).Methods("GET")
 				lists.HandleFunc("/{id}", h.getListById).Methods("GET")
 				lists.HandleFunc("/{id}", h.deleteListById).Methods("DELETE")
+				cards := lists.PathPrefix("/{listId}/cards").Subrouter()
+				{
+					cards.HandleFunc("", h.createCard).Methods("POST")
+					cards.HandleFunc("", h.getCardsByListId).Methods("GET")
+				}
 			}
 		}
 	}
-
+	router.PathPrefix("/swagger/").Handler(httpSwagger.WrapHandler)
 	return router
+}
+
+type postBody struct {
+	Id int `json:"id,omitempty"`
 }

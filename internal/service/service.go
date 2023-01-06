@@ -10,6 +10,7 @@ type Service struct {
 	Workspace
 	Board
 	List
+	Card
 }
 
 type Auth interface {
@@ -38,11 +39,19 @@ type List interface {
 	DeleteById(userId, workspaceId, boardId, listId int) (int, error)
 }
 
+type Card interface {
+	Create(title string, userId, workspaceId, boardId, ListId int) (int, error)
+	GetByListId(userId, workspaceId, boardId, ListId int) ([]entity.Cards, error)
+	// GetById(userId, workspaceId, boardId, listId, cardId int) (entity.Cards, error)
+	// DeleteById(userId, workspaceId, boardId, listId, cardId int) (int, error)
+}
+
 func NewService(repo *repository.Repository) *Service {
 	return &Service{
 		Auth:      NewAuthService(repo.Auth),
 		Workspace: NewWorkspaceService(repo.Workspace),
 		Board:     NewBoardService(repo.Board),
 		List:      NewListService(repo.List),
+		Card:      NewCardService(repo.Card),
 	}
 }

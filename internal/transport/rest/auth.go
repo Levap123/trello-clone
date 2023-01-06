@@ -13,19 +13,8 @@ type signInBody struct {
 	Password string `json:"password,omitempty"`
 }
 
-func (h *Handler) signIn(w http.ResponseWriter, r *http.Request) {
-	var body signInBody
-	webjson.ReadJSON(r, &body)
-	token, err := h.service.Auth.GetUser(body.Email, body.Password)
-	if err != nil {
-		status := http.StatusInternalServerError
-		if errors.Is(err, errs.ErrInvalidEmail) || errors.Is(err, errs.ErrPasswordIncorrect) {
-			status = http.StatusBadRequest
-		}
-		webjson.JSONError(w, err, status)
-		return
-	}
-	webjson.SendJSON(w, map[string]string{"token": token})
+type tokenOutput struct {
+	Token string `json:"token,omitempty"`
 }
 
 type signUpBody struct {
@@ -34,6 +23,16 @@ type signUpBody struct {
 	Password string `json:"password,omitempty"`
 }
 
+// @Summary SignUp
+// @Tags auth
+// @Description create account
+// @ID create-account
+// @Accept  json
+// @Produce  json
+// @Param input body signUpBody true "credentials"
+// @Success 200 {object} postBody
+// @Failure default {object} webjson.errorResponse
+// @Router /auth/sign-up [post]
 func (h *Handler) signUp(w http.ResponseWriter, r *http.Request) {
 	var body signUpBody
 	webjson.ReadJSON(r, &body)
@@ -48,5 +47,30 @@ func (h *Handler) signUp(w http.ResponseWriter, r *http.Request) {
 		webjson.JSONError(w, err, http.StatusInternalServerError)
 		return
 	}
-	webjson.SendJSON(w, map[string]int{"id": id})
+	webjson.SendJSON(w, postBody{id})
+}
+
+// @Summary SignIn
+// @Tags auth
+// @Description login
+// @ID login
+// @Accept  json
+// @Produce  json
+// @Param input body signInBody true "credentials"
+// @Success 200 {object} tokenOutput
+// @Failure default {object} webjson.errorResponse
+// @Router /auth/sign-in [post]
+func (h *Handler) signIn(w http.ResponseWriter, r *http.Request) {
+	var body signInBody
+	webjson.ReadJSON(r, &body)
+	token, err := h.service.Auth.GetUser(body.Email, body.Password)
+	if err != nil {
+		status := http.StatusInternalServerError
+		if errors.Is(err, errs.ErrInvalidEmail) || errors.Is(err, errs.ErrPasswordIncorrect) {
+			status = http.StatusBadRequest
+		}
+		webjson.JSONError(w, err, status)
+		return
+	}
+	webjson.SendJSON(w, tokenOutput{token})
 }

@@ -10,6 +10,9 @@ import (
 	"github.com/Levap123/trello-clone/pkg/server"
 )
 
+// @title trello-clone API documentation
+// @version 1.0.0// @host localhost:8080
+// @BasePath /
 func main() {
 	dbCfg := configs.NewDbConfigs()
 	serverCfg := configs.NewServerCgf()
@@ -21,7 +24,7 @@ func main() {
 	if err := db.Ping(); err != nil {
 		logger.Err.Fatalln(err.Error())
 	}
-	repo := repository.NewRepoPostgres(db)
+	repo := repository.NewPostgresRepo(db)
 	service := service.NewService(repo)
 	handler := rest.NewHandler(service, logger)
 	server := new(server.Server)

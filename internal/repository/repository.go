@@ -11,6 +11,7 @@ type Repository struct {
 	Workspace
 	Board
 	List
+	Card
 }
 
 type Auth interface {
@@ -39,11 +40,19 @@ type List interface {
 	DeleteById(userId, workspaceId, boardId, listId int) (int, error)
 }
 
-func NewRepoPostgres(db *sqlx.DB) *Repository {
+type Card interface {
+	Create(title string, userId, workspaceId, boardId, ListId int) (int, error)
+	GetByListId(userId, workspaceId, boardId, ListId int) ([]entity.Cards, error)
+	// GetById(userId, workspaceId, boardId, listId, cardId int) (entity.Cards, error)
+	// DeleteById(userId, workspaceId, boardId, listId, cardId int) (int, error)
+}
+
+func NewPostgresRepo(db *sqlx.DB) *Repository {
 	return &Repository{
 		Auth:      postgres.NewAuthRepo(db),
 		Workspace: postgres.NewWorkspaceRepo(db),
 		Board:     postgres.NewBoardRepo(db),
 		List:      postgres.NewListRepo(db),
+		Card:      postgres.NewCardRepo(db),
 	}
 }

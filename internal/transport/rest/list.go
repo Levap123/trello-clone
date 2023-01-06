@@ -40,7 +40,7 @@ func (h *Handler) createList(w http.ResponseWriter, r *http.Request) {
 		webjson.JSONError(w, errs.WebFail(http.StatusInternalServerError), http.StatusInternalServerError)
 		return
 	}
-	webjson.SendJSON(w, map[string]int{"listId": listId})
+	webjson.SendJSON(w, postBody{listId})
 }
 
 func (h *Handler) getByBoardId(w http.ResponseWriter, r *http.Request) {

@@ -1,0 +1,176 @@
+basePath: /
+definitions:
+  entity.Workspace:
+    properties:
+      id:
+        type: integer
+      logo:
+        type: string
+      title:
+        type: string
+      userId:
+        type: integer
+    type: object
+  rest.postBody:
+    properties:
+      id:
+        type: integer
+    type: object
+  rest.signInBody:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  rest.signUpBody:
+    properties:
+      email:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+    type: object
+  rest.tokenOutput:
+    properties:
+      token:
+        type: string
+    type: object
+  rest.workspaceInput:
+    properties:
+      logo:
+        type: string
+      title:
+        type: string
+    type: object
+  webjson.errorResponse:
+    properties:
+      message:
+        type: string
+    type: object
+info:
+  contact: {}
+  title: trello-clone API documentation
+  version: 1.0.0// @host localhost:8080
+paths:
+  /api/workspaces:
+    post:
+      consumes:
+      - application/json
+      description: create workspace
+      operationId: create-workspace
+      parameters:
+      - description: credentials
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/rest.workspaceInput'
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/rest.postBody'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Create worskpace
+      tags:
+      - workspace
+  /api/workspaces/{id}:
+    get:
+      consumes:
+      - application/json
+      description: get workspace
+      operationId: get-workspace
+      parameters:
+      - description: Workspace ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.Workspace'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Get worskpace by id
+      tags:
+      - workspace
+  /auth/sign-in:
+    post:
+      consumes:
+      - application/json
+      description: login
+      operationId: login
+      parameters:
+      - description: credentials
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/rest.signInBody'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/rest.tokenOutput'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: SignIn
+      tags:
+      - auth
+  /auth/sign-up:
+    post:
+      consumes:
+      - application/json
+      description: create account
+      operationId: create-account
+      parameters:
+      - description: credentials
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/rest.signUpBody'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/rest.postBody'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: SignUp
+      tags:
+      - auth
+swagger: "2.0"

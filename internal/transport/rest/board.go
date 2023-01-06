@@ -43,7 +43,7 @@ func (h *Handler) createBoard(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	webjson.SendJSON(w, map[string]int{"boardId": boardId})
+	webjson.SendJSON(w, postBody{boardId})
 }
 
 func (h *Handler) getBoardById(w http.ResponseWriter, r *http.Request) {

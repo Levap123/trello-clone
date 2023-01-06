@@ -15,6 +15,7 @@ const (
 	workspaceRelationTable = "users_workspaces"
 	boardTable             = "boards"
 	listTable              = "lists"
+	cardTable              = "cards"
 )
 
 func createTables(db *sqlx.DB) error {

@@ -421,3 +421,43 @@ ERROR: 2023/01/04 23:04:18 workspace.go:45: workspace with this id does not exis
 INFO:  2023/01/04 23:05:07 main.go:28: server is listening on: http://localhost:8080
 ERROR: 2023/01/04 23:05:09 list.go:128: sql: no rows in result set
 ERROR: 2023/01/04 23:05:13 list.go:94: sql: no rows in result set
+INFO:  2023/01/05 16:24:40 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/05 16:37:33 main.go:19: Init db: Create tables: ERROR: insert or update on table "boards" violates foreign key constraint "boards_workspace_id_fkey" (SQLSTATE 23503)
+ERROR: 2023/01/05 16:38:41 main.go:19: Init db: Create tables: ERROR: syntax error at or near "p" (SQLSTATE 42601)
+INFO:  2023/01/05 16:39:12 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/05 17:59:11 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/05 18:01:10 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/05 18:01:33 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/05 18:12:34 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/05 18:13:24 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/05 18:13:25 card.go:63: scannable dest type slice with >1 columns (3) in result
+INFO:  2023/01/05 18:14:02 main.go:28: server is listening on: http://localhost:8080
+ERROR: 2023/01/05 18:14:03 card.go:63: scannable dest type slice with >1 columns (3) in result
+INFO:  2023/01/05 18:14:14 main.go:28: server is listening on: http://localhost:8080
+INFO:  2023/01/05 20:38:51 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/05 20:40:04 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/05 20:42:10 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/05 22:39:37 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:08:52 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 11:09:34 card.go:63: invalid object id
+INFO:  2023/01/06 11:14:07 main.go:31: server is listening on: http://localhost:8080
+ERROR: 2023/01/06 11:14:38 auth.go:54: user with this name or username is already exists
+ERROR: 2023/01/06 11:14:41 auth.go:54: user with this name or username is already exists
+INFO:  2023/01/06 11:15:34 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:17:34 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:17:49 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:18:52 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:18:56 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:19:10 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:20:29 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:20:58 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:23:40 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:27:40 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:34:04 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:34:38 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:38:25 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:40:12 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:40:27 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:42:29 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:44:44 main.go:31: server is listening on: http://localhost:8080
+INFO:  2023/01/06 11:48:28 main.go:31: server is listening on: http://localhost:8080
