@@ -10,15 +10,19 @@ import (
 )
 
 func InitDb(dbCfg *configs.DbConfigs) (*sqlx.DB, error) {
+
 	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+
 		"password=%s dbname=%s sslmode=disable",
 		dbCfg.Host, dbCfg.Port, dbCfg.Name, dbCfg.Password, dbCfg.DbName)
-
+	fmt.Println(psqlInfo)
 	db, err := sqlx.Open("pgx", psqlInfo)
-	if err := createTables(db); err != nil {
-		return nil, errs.Fail(err, "Init db")
-	}
 	if err != nil {
+		return nil, err
+	}
+	if err := db.Ping(); err != nil {
+		return nil, err
+	}
+	if err := createTables(db); err != nil {
 		return nil, errs.Fail(err, "Init db")
 	}
 	return db, nil

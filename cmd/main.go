@@ -1,6 +1,9 @@
 package main
 
 import (
+	"fmt"
+	"log"
+
 	"github.com/Levap123/trello-clone/configs"
 	"github.com/Levap123/trello-clone/internal/repository"
 	"github.com/Levap123/trello-clone/internal/repository/postgres"
@@ -19,6 +22,7 @@ func main() {
 	logger := logger.NewLogger()
 	db, err := postgres.InitDb(dbCfg)
 	if err != nil {
+		fmt.Println(err)
 		logger.Err.Fatalln(err.Error())
 	}
 	if err := db.Ping(); err != nil {
@@ -29,6 +33,7 @@ func main() {
 	handler := rest.NewHandler(service, logger)
 	server := new(server.Server)
 	logger.Info.Printf("server is listening on: http://localhost%s\n", serverCfg.Address)
+	log.Printf("server is listening on: http://localhost%s\n", serverCfg.Address)
 	if err := server.Run(serverCfg.Address, handler.InitRoutes()); err != nil {
 		logger.Err.Fatalln(err.Error())
 	}
