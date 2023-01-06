@@ -18,7 +18,7 @@ Rest API clone of [trello](https://trello.com/)
 Clone the project
 
 ```bash
-  https://github.com/Levap123/trello-clone
+  git clone https://github.com/Levap123/trello-clone
 ```
 
 Go to the project directory
