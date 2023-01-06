@@ -1,5 +1,25 @@
 basePath: /
 definitions:
+  entity.Board:
+    properties:
+      background:
+        type: string
+      id:
+        type: integer
+      title:
+        type: string
+      workspaceId:
+        type: integer
+    type: object
+  entity.List:
+    properties:
+      boardId:
+        type: integer
+      id:
+        type: integer
+      title:
+        type: string
+    type: object
   entity.Workspace:
     properties:
       id:
@@ -10,6 +30,18 @@ definitions:
         type: string
       userId:
         type: integer
+    type: object
+  rest.boardInput:
+    properties:
+      background:
+        type: string
+      title:
+        type: string
+    type: object
+  rest.listInput:
+    properties:
+      title:
+        type: string
     type: object
   rest.postBody:
     properties:
@@ -80,7 +112,7 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/webjson.errorResponse'
-      summary: Get all worskpaces by id
+      summary: Get all worskpaces by user id
       tags:
       - workspace
     post:
@@ -178,6 +210,314 @@ paths:
       summary: Get worskpace by id
       tags:
       - workspace
+  /api/workspaces/{workspaceId}/boards:
+    get:
+      consumes:
+      - application/json
+      description: get boards
+      operationId: get-boards
+      parameters:
+      - description: Workspace ID
+        in: path
+        name: workspaceId
+        required: true
+        type: string
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/entity.Board'
+            type: array
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Get boards by workspace id
+      tags:
+      - board
+    post:
+      consumes:
+      - application/json
+      description: create board
+      operationId: create-board
+      parameters:
+      - description: credentials
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/rest.boardInput'
+      - description: Workspace ID
+        in: path
+        name: workspaceId
+        required: true
+        type: string
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/rest.postBody'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Create board
+      tags:
+      - board
+  /api/workspaces/{workspaceId}/boards/{boardId}/lists:
+    get:
+      consumes:
+      - application/json
+      description: get lists
+      operationId: get-lists
+      parameters:
+      - description: Workspace ID
+        in: path
+        name: workspaceId
+        required: true
+        type: string
+      - description: Board ID
+        in: path
+        name: boardId
+        required: true
+        type: string
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/entity.List'
+            type: array
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Get lists by board
+      tags:
+      - list
+    post:
+      consumes:
+      - application/json
+      description: create list
+      operationId: create-list
+      parameters:
+      - description: credentials
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/rest.listInput'
+      - description: Workspace ID
+        in: path
+        name: workspaceId
+        required: true
+        type: string
+      - description: Board ID
+        in: path
+        name: boardId
+        required: true
+        type: string
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/rest.postBody'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Create list
+      tags:
+      - list
+  /api/workspaces/{workspaceId}/boards/{boardId}/lists/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete list
+      operationId: delete-list
+      parameters:
+      - description: Workspace ID
+        in: path
+        name: workspaceId
+        required: true
+        type: string
+      - description: Board ID
+        in: path
+        name: boardId
+        required: true
+        type: string
+      - description: Board ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/rest.postBody'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: delete list by list id
+      tags:
+      - list
+    get:
+      consumes:
+      - application/json
+      description: get list
+      operationId: get-list
+      parameters:
+      - description: Workspace ID
+        in: path
+        name: workspaceId
+        required: true
+        type: string
+      - description: Board ID
+        in: path
+        name: boardId
+        required: true
+        type: string
+      - description: Board ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.List'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Get list by list id
+      tags:
+      - list
+  /api/workspaces/{workspaceId}/boards/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete board
+      operationId: delete-board
+      parameters:
+      - description: Workspace ID
+        in: path
+        name: workspaceId
+        required: true
+        type: string
+      - description: Board ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/rest.postBody'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Delete board by id
+      tags:
+      - board
+    get:
+      consumes:
+      - application/json
+      description: get board
+      operationId: get-board
+      parameters:
+      - description: Workspace ID
+        in: path
+        name: workspaceId
+        required: true
+        type: string
+      - description: Board ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - default: Bearer <Add access token here>
+        description: With the bearer started
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.Board'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/webjson.errorResponse'
+      summary: Get board by id
+      tags:
+      - board
   /auth/sign-in:
     post:
       consumes:
@@ -202,7 +542,7 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/webjson.errorResponse'
-      summary: SignIn
+      summary: sign in
       tags:
       - auth
   /auth/sign-up:
@@ -229,7 +569,7 @@ paths:
           description: ""
           schema:
             $ref: '#/definitions/webjson.errorResponse'
-      summary: SignUp
+      summary: sign up
       tags:
       - auth
 swagger: "2.0"

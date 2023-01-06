@@ -100,7 +100,7 @@ func (h *Handler) deleteWorkspaceById(w http.ResponseWriter, r *http.Request) {
 	webjson.SendJSON(w, map[string]int{"workspaceId": workSpaceId})
 }
 
-// @Summary Get all worskpaces by id
+// @Summary Get all worskpaces by user id
 // @Tags workspace
 // @Description get workspace
 // @ID get-workspaces

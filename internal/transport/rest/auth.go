@@ -23,7 +23,7 @@ type signUpBody struct {
 	Password string `json:"password,omitempty"`
 }
 
-// @Summary SignUp
+// @Summary sign up
 // @Tags auth
 // @Description create account
 // @ID create-account
@@ -50,7 +50,7 @@ func (h *Handler) signUp(w http.ResponseWriter, r *http.Request) {
 	webjson.SendJSON(w, postBody{id})
 }
 
-// @Summary SignIn
+// @Summary sign in
 // @Tags auth
 // @Description login
 // @ID login

@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS workspaces (
 );
 
 CREATE TABLE IF NOT EXISTS users_workspaces(
-	user_id INT REFERENCES users(id),
+	user_id INT,
 	workspace_id INT,	
 	UNIQUE (user_id, workspace_id)
 );
@@ -21,19 +21,19 @@ CREATE TABLE IF NOT EXISTS boards (
 	id SERIAL PRIMARY KEY,
 	title TEXT NOT NULL,
 	background TEXT,
-	workspace_id INT REFERENCES workspaces(id)
+	workspace_id INT 
 );
 
 CREATE TABLE IF NOT EXISTS lists (
 	id SERIAL PRIMARY KEY,
 	title TEXT NOT NULL,
-	board_id INT REFERENCES boards(id)
+	board_id INT
 );
 
 CREATE TABLE IF NOT EXISTS cards (
 	id SERIAL PRIMARY KEY,
 	title TEXT NOT NULL,
-	list_id INT REFERENCES lists(id)
+	list_id INT
 );
 
 ALTER TABLE users_workspaces ADD FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE;

@@ -16,6 +16,19 @@ type listInput struct {
 	Title string `json:"title,omitempty"`
 }
 
+// @Summary Create list
+// @Tags list
+// @Description create list
+// @ID create-list
+// @Accept  json
+// @Produce  json
+// @Param input body listInput true "credentials"
+// @Param workspaceId path string true "Workspace ID"
+// @Param boardId path string true "Board ID"
+// @Param Authorization header string true "With the bearer started" default(Bearer <Add access token here>)
+// @Success 200 {object} postBody
+// @Failure default {object} webjson.errorResponse
+// @Router /api/workspaces/{workspaceId}/boards/{boardId}/lists [post]
 func (h *Handler) createList(w http.ResponseWriter, r *http.Request) {
 	workspaceId, err := strconv.Atoi(mux.Vars(r)["workspaceId"])
 	if err != nil {
@@ -43,6 +56,18 @@ func (h *Handler) createList(w http.ResponseWriter, r *http.Request) {
 	webjson.SendJSON(w, postBody{listId})
 }
 
+// @Summary Get lists by board
+// @Tags list
+// @Description get lists
+// @ID get-lists
+// @Accept  json
+// @Produce  json
+// @Param workspaceId path string true "Workspace ID"
+// @Param boardId path string true "Board ID"
+// @Param Authorization header string true "With the bearer started" default(Bearer <Add access token here>)
+// @Success 200 {array} entity.List
+// @Failure default {object} webjson.errorResponse
+// @Router /api/workspaces/{workspaceId}/boards/{boardId}/lists [get]
 func (h *Handler) getByBoardId(w http.ResponseWriter, r *http.Request) {
 	workspaceId, err := strconv.Atoi(mux.Vars(r)["workspaceId"])
 	if err != nil {
@@ -72,6 +97,19 @@ func (h *Handler) getByBoardId(w http.ResponseWriter, r *http.Request) {
 	webjson.SendJSON(w, lists)
 }
 
+// @Summary Get list by list id
+// @Tags list
+// @Description get list
+// @ID get-list
+// @Accept  json
+// @Produce  json
+// @Param workspaceId path string true "Workspace ID"
+// @Param boardId path string true "Board ID"
+// @Param id path string true "Board ID"
+// @Param Authorization header string true "With the bearer started" default(Bearer <Add access token here>)
+// @Success 200 {object} entity.List
+// @Failure default {object} webjson.errorResponse
+// @Router /api/workspaces/{workspaceId}/boards/{boardId}/lists/{id} [get]
 func (h *Handler) getListById(w http.ResponseWriter, r *http.Request) {
 	workspaceId, err := strconv.Atoi(mux.Vars(r)["workspaceId"])
 	if err != nil {
@@ -106,6 +144,19 @@ func (h *Handler) getListById(w http.ResponseWriter, r *http.Request) {
 	webjson.SendJSON(w, list)
 }
 
+// @Summary delete list by list id
+// @Tags list
+// @Description delete list
+// @ID delete-list
+// @Accept  json
+// @Produce  json
+// @Param workspaceId path string true "Workspace ID"
+// @Param boardId path string true "Board ID"
+// @Param id path string true "Board ID"
+// @Param Authorization header string true "With the bearer started" default(Bearer <Add access token here>)
+// @Success 200 {object} postBody
+// @Failure default {object} webjson.errorResponse
+// @Router /api/workspaces/{workspaceId}/boards/{boardId}/lists/{id} [delete]
 func (h *Handler) deleteListById(w http.ResponseWriter, r *http.Request) {
 	workspaceId, err := strconv.Atoi(mux.Vars(r)["workspaceId"])
 	if err != nil {
