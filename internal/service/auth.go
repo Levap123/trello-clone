@@ -8,12 +8,12 @@ import (
 )
 
 type AuthService struct {
-	repo repository.Auth
+	Repo repository.Auth
 }
 
-func NewAuthService(repo repository.Auth) *AuthService {
+func NewAuthService(Repo repository.Auth) *AuthService {
 	return &AuthService{
-		repo: repo,
+		Repo: Repo,
 	}
 }
 
@@ -22,11 +22,11 @@ func (as *AuthService) CreateUser(email, username, password string) (int, error)
 	if err != nil {
 		return 0, errs.Fail(err, "CreateUser")
 	}
-	return as.repo.CreateUser(email, username, password)
+	return as.Repo.CreateUser(email, username, password)
 }
 
 func (as *AuthService) GetUser(email, password string) (string, error) {
-	user, err := as.repo.GetUser(email)
+	user, err := as.Repo.GetUser(email)
 	if err != nil {
 		return "", err
 	}
