@@ -11,7 +11,7 @@ import (
 
 func TestGetUser(t *testing.T) {
 	emails := []string{"test@mail.ru", "arturpidor@mail.ru", "pavel@mail.ru"}
-	
+
 	mockAuthRepo := mock.NewAuthRepo()
 	testAuthSvc := service.NewAuthService(mockAuthRepo)
 	t.Run("should compare password and generate valid jwt", func(t *testing.T) {
@@ -32,6 +32,12 @@ func TestGetUser(t *testing.T) {
 		}
 		if id != user.Id {
 			t.Fatal("token parsed incorrect")
+		}
+	})
+	t.Run("should throw error in getting user", func(t *testing.T) {
+		_, err := testAuthSvc.Repo.GetUser("dafijsdfouh(*datygf")
+		if err == nil {
+			t.Fatal("error in gettng user from mock repo")
 		}
 	})
 }
