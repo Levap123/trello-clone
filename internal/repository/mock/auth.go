@@ -20,12 +20,12 @@ var users = []entity.User{
 	{
 		Id:       2,
 		Email:    "arturpidor@mail.ru",
-		Password: "arturPiDoR!@#43254",
+		Password: "$2a$10$Egr3cz7o5Ce6UuOWKKjCQeiUJ/ccjYhD0jprUFAJ8JxwYMZlCBrci",
 	},
 	{
 		Id:       2,
 		Email:    "pavel@gmail.ru",
-		Password: "qwqwe21DSA!@#ADiu9382",
+		Password: "$2a$10$SpECtvQlEmOquDYcmUJOKOlMb0RKn24nradwYrkkWlKYgUSyIYT0y",
 	},
 }
 
